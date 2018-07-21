@@ -4,24 +4,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/07/21/Daily/</loc>
-    <lastmod>2018-07-21T09:29:10.743Z</lastmod>
-    <data>
-        <display>
-        <title>Daily</title>
-        <pubTime>2018-07-21T08:55:27.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2018/07/19/My-Qiu-Qiu/</loc>
     <lastmod>2018-07-21T09:28:18.094Z</lastmod>
     <data>
@@ -36,21 +18,6 @@
              
               <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/19/%E7%A7%8B%E9%A3%8E%E4%B8%8D%E6%95%A3%E5%9C%BA/</loc>
-    <lastmod>2018-07-21T09:22:43.094Z</lastmod>
-    <data>
-        <display>
-        <title>秋风不散场</title>
-        <pubTime>2018-07-19T13:32:11.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
