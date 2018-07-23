@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/07/23/Planning/</loc>
+    <lastmod>2018-07-23T05:55:34.761Z</lastmod>
+    <data>
+        <display>
+        <title>学习计划</title>
+        <pubTime>2018-07-23T01:39:15.000Z</pubTime>
+        
+        <tag>总计划</tag>
+         
+        <tag>数据挖掘</tag>
+         
+         
+           
+             
+              <breadCrumb title="计划" url="http://yoursite.com/categories/%E8%AE%A1%E5%88%92/"/>
+          
+             
+              <breadCrumb title="专业" url="http://yoursite.com/categories/%E8%AE%A1%E5%88%92/%E4%B8%93%E4%B8%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/07/19/My-Qiu-Qiu/</loc>
     <lastmod>2018-07-21T09:49:22.119Z</lastmod>
     <data>
