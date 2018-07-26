@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2018-07-26T13:09:42.419Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2018-07-26T13:07:01.885Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/schedule/index.html</loc>
+    
+    <lastmod>2018-07-26T13:06:55.615Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2018-07-26T13:06:38.717Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/07/23/Planning/</loc>
     
-    <lastmod>2018-07-26T12:41:47.475Z</lastmod>
+    <lastmod>2018-07-26T12:59:57.561Z</lastmod>
     
   </url>
   
@@ -12,41 +40,6 @@
     <loc>http://yoursite.com/2018/07/19/My-Qiu-Qiu/</loc>
     
     <lastmod>2018-07-26T12:09:28.704Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/schedule/index.html</loc>
-    
-    <lastmod>2018-07-21T06:21:39.627Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index-1.html</loc>
-    
-    <lastmod>2018-07-21T06:17:22.124Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2018-07-21T06:15:26.054Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2018-07-21T06:14:14.759Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2018-07-21T06:11:12.717Z</lastmod>
     
   </url>
   
