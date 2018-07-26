@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, zCoding" />
 
 
 
@@ -83,7 +83,7 @@
 <meta name="keywords" content="个人博客，技术类">
 <meta property="og:type" content="website">
 <meta property="og:title" content="枫林渡">
-<meta property="og:url" content="http://yoursite.com/categories/日记/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/生活/index.html">
 <meta property="og:site_name" content="枫林渡">
 <meta property="og:description" content="Stay Hungry Stay Foolish">
 <meta property="og:locale" content="zh-Hans">
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/日记/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/生活/"/>
 
 
 
 
 
-  <title>分类: 日记 | 枫林渡</title>
+  <title>分类: 生活 | 枫林渡</title>
   
 
 
@@ -212,12 +212,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+        <li class="menu-item menu-item-code">
+          <a href="/categories/学习/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
-            标签
+            学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/生活/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            生活
           </a>
         </li>
       
@@ -228,6 +238,16 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -276,7 +296,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>日记<small>分类</small>
+        <h1>生活<small>分类</small>
         </h1>
       </div>
 
@@ -620,6 +640,28 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'M21sDSlu8gdmqbUdoKrXILYS-gzGzoHsz',
+        appKey: 'utJA9jhdKT7UHlpONQeaBlwD',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
 
@@ -641,6 +683,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
 
   
 

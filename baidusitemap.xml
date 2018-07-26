@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/07/23/Planning/</loc>
-    <lastmod>2018-07-26T02:55:40.750Z</lastmod>
+    <lastmod>2018-07-26T12:41:47.475Z</lastmod>
     <data>
         <display>
         <title>学习计划</title>
@@ -18,10 +18,7 @@
          
            
              
-              <breadCrumb title="计划" url="http://yoursite.com/categories/%E8%AE%A1%E5%88%92/"/>
-          
-             
-              <breadCrumb title="专业" url="http://yoursite.com/categories/%E8%AE%A1%E5%88%92/%E4%B8%93%E4%B8%9A/"/>
+              <breadCrumb title="学习" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -30,7 +27,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/07/19/My-Qiu-Qiu/</loc>
-    <lastmod>2018-07-21T09:49:22.119Z</lastmod>
+    <lastmod>2018-07-26T12:09:28.704Z</lastmod>
     <data>
         <display>
         <title>秋秋，好喜欢你啊</title>
@@ -41,7 +38,10 @@
          
            
              
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+              <breadCrumb title="生活" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/"/>
           
         </display>
     </data>

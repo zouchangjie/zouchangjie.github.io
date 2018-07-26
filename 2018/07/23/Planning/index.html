@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -88,7 +88,7 @@
 <meta property="og:description" content="这篇主要规划未来的一年（截止到2019年7月31号）的学习目标">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/Planning/选择正确的评估器.jpg">
-<meta property="og:updated_time" content="2018-07-26T02:55:40.750Z">
+<meta property="og:updated_time" content="2018-07-26T12:41:47.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习计划">
 <meta name="twitter:description" content="这篇主要规划未来的一年（截止到2019年7月31号）的学习目标">
@@ -100,7 +100,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
@@ -215,12 +215,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+        <li class="menu-item menu-item-code">
+          <a href="/categories/学习/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
-            标签
+            学习
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/生活/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            生活
           </a>
         </li>
       
@@ -231,6 +241,16 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -338,19 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计划/" itemprop="url" rel="index">
-                    <span itemprop="name">计划</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计划/专业/" itemprop="url" rel="index">
-                    <span itemprop="name">专业</span>
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
                   </a>
                 </span>
 
@@ -361,6 +370,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/23/Planning/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/23/Planning/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -395,7 +414,9 @@
       
 
       
-        <p>这篇主要规划未来的一年（截止到2019年7月31号）的学习目标</p>
+        <blockquote>
+<p>这篇主要规划未来的一年（截止到2019年7月31号）的学习目标</p>
+</blockquote>
 <a id="more"></a> 
 <p>未来的不到一年的时间，我希望我可以掌握数据挖掘方向的一些算法。比如常用的<strong>机器学习算法</strong>，还有<strong>强化学习</strong>的算法，还希望学习一些关于<strong>深度学习</strong>的算法，最近还接触到了<strong>协同过滤算法，和基因算法</strong>。我希望以后也可以有了解。还有一件事情是我需要将我的英语能力给提上来。先将主体目录建立起来以后慢慢的充实。</p>
 <p><strong>望且行且珍惜，不要荒废时间。</strong> </p>
@@ -475,6 +496,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -802,6 +826,28 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'M21sDSlu8gdmqbUdoKrXILYS-gzGzoHsz',
+        appKey: 'utJA9jhdKT7UHlpONQeaBlwD',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
 
@@ -823,6 +869,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
 
   
 
