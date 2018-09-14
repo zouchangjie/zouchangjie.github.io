@@ -4,12 +4,57 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/07/30/daily8/</loc>
-    <lastmod>2018-09-14T11:37:27.497Z</lastmod>
+    <loc>http://yoursite.com/2018/07/23/Planning/</loc>
+    <lastmod>2018-09-14T11:46:30.217Z</lastmod>
+    <data>
+        <display>
+        <title>学习计划</title>
+        <pubTime>2018-07-23T01:39:15.000Z</pubTime>
+        
+        <tag>总计划</tag>
+         
+        <tag>数据挖掘</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/19/My-Qiu-Qiu/</loc>
+    <lastmod>2018-09-14T11:46:29.485Z</lastmod>
+    <data>
+        <display>
+        <title>写的一些话</title>
+        <pubTime>2018-07-19T11:52:21.000Z</pubTime>
+        
+        <tag>Qiu-Qiu</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="日记" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/13/git/</loc>
+    <lastmod>2018-09-14T11:46:28.536Z</lastmod>
     <data>
         <display>
         <title>Git操作</title>
-        <pubTime>2018-07-30T03:26:05.000Z</pubTime>
+        <pubTime>2018-09-13T11:39:15.000Z</pubTime>
         
         <tag>git</tag>
          
@@ -24,23 +69,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/09/14/git/</loc>
-    <lastmod>2018-09-14T11:20:05.610Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2018-09-14T11:20:05.610Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2018/09/05/daily9/</loc>
-    <lastmod>2018-09-05T12:15:48.694Z</lastmod>
+    <lastmod>2018-09-14T11:46:27.424Z</lastmod>
     <data>
         <display>
         <title>九月日记</title>
@@ -61,52 +91,7 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2018/07/19/My-Qiu-Qiu/</loc>
-    <lastmod>2018-09-05T09:01:56.795Z</lastmod>
-    <data>
-        <display>
-        <title>秋秋，好喜欢你啊</title>
-        <pubTime>2018-07-19T11:52:21.000Z</pubTime>
-        
-        <tag>Qiu-Qiu</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-          
-             
-              <breadCrumb title="日记" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
     
-    
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/23/Planning/</loc>
-    <lastmod>2018-07-26T12:59:57.561Z</lastmod>
-    <data>
-        <display>
-        <title>学习计划</title>
-        <pubTime>2018-07-23T01:39:15.000Z</pubTime>
-        
-        <tag>总计划</tag>
-         
-        <tag>数据挖掘</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
 </urlset>
