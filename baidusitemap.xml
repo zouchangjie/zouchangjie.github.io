@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/09/13/git/</loc>
+    <lastmod>2018-09-14T12:20:23.925Z</lastmod>
+    <data>
+        <display>
+        <title>Git操作</title>
+        <pubTime>2018-09-13T11:39:15.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="随手记" url="http://yoursite.com/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/07/23/Planning/</loc>
     <lastmod>2018-09-14T11:46:30.217Z</lastmod>
     <data>
@@ -42,26 +62,6 @@
           
              
               <breadCrumb title="日记" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/09/13/git/</loc>
-    <lastmod>2018-09-14T11:46:28.536Z</lastmod>
-    <data>
-        <display>
-        <title>Git操作</title>
-        <pubTime>2018-09-13T11:39:15.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="随手记" url="http://yoursite.com/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
           
         </display>
     </data>

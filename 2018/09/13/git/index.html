@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="GitLab和GitHub的同步我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。 当在本地有一个GitLab的库后，在使用下面的一行命令 1、使用如下命令添加第二个远程仓库。  git remote set-url –add oginin http://192.168.100.54/git/gaoxing/gaoxTest.git gi">
+<meta name="description" content="#GITLAB和GITHUB的同步GITLAB和GITHUB的同步 我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。在本地有一个GitLab的库后，在git bash内一次输入下面的命令就好。">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git操作">
 <meta property="og:url" content="http://yoursite.com/2018/09/13/git/index.html">
 <meta property="og:site_name" content="枫林渡">
-<meta property="og:description" content="GitLab和GitHub的同步我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。 当在本地有一个GitLab的库后，在使用下面的一行命令 1、使用如下命令添加第二个远程仓库。  git remote set-url –add oginin http://192.168.100.54/git/gaoxing/gaoxTest.git gi">
+<meta property="og:description" content="#GITLAB和GITHUB的同步GITLAB和GITHUB的同步 我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。在本地有一个GitLab的库后，在git bash内一次输入下面的命令就好。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-14T11:46:28.536Z">
+<meta property="og:updated_time" content="2018-09-14T12:20:23.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git操作">
-<meta name="twitter:description" content="GitLab和GitHub的同步我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。 当在本地有一个GitLab的库后，在使用下面的一行命令 1、使用如下命令添加第二个远程仓库。  git remote set-url –add oginin http://192.168.100.54/git/gaoxing/gaoxTest.git gi">
+<meta name="twitter:description" content="#GITLAB和GITHUB的同步GITLAB和GITHUB的同步 我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。在本地有一个GitLab的库后，在git bash内一次输入下面的命令就好。">
 
 
 
@@ -374,6 +374,12 @@
           
 
           
+              <div class="post-description">
+                  #GITLAB和GITHUB的同步GITLAB和GITHUB的同步
+我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。在本地有一个GitLab的库后，在git
+bash内一次输入下面的命令就好。
+              </div>
+          
 
         </div>
       </header>
@@ -388,18 +394,11 @@
       
 
       
-        <h1 id="GitLab和GitHub的同步"><a href="#GitLab和GitHub的同步" class="headerlink" title="GitLab和GitHub的同步"></a>GitLab和GitHub的同步</h1><p>我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。</p>
-<p>当在本地有一个GitLab的库后，在使用下面的一行命令</p>
-<p>1、使用如下命令添加第二个远程仓库。</p>
-<blockquote>
-<p>git remote set-url –add oginin <a href="http://192.168.100.54/git/gaoxing/gaoxTest.git" target="_blank" rel="noopener">http://192.168.100.54/git/gaoxing/gaoxTest.git</a></p>
-<p>git remote set-url –add oginin <a href="http://githubXXXXXX" target="_blank" rel="noopener">http://githubXXXXXX</a></p>
-<p><a href="http://githubXXXXXX" target="_blank" rel="noopener">http://githubXXXXXX</a> : 是在GitHub里的‘clone or download’获得的</p>
-</blockquote>
-<p>2、查看远程仓库情况。可以看到 github 远程仓库有两个 push 地址。<em>这种方法的好处是每次只需要</em> push <em>一次就行了。</em></p>
-<blockquote>
-<p>git remote -v</p>
-</blockquote>
+        <h1 id="GitLab和GitHub的同步"><a href="#GitLab和GitHub的同步" class="headerlink" title="GitLab和GitHub的同步"></a>GitLab和GitHub的同步</h1><p>我想可以在GitLab里建库，然后随时可以同步到GitHub上。我使用的是git命令中关于多个远程仓库的命令。在本地有一个GitLab的库后，在git bash内一次输入下面的命令就好。<br><a id="more"></a></p>
+<p>ooNoIndent00使用如下命令添加第二个远程仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url --add oginin http://192.168.100.54/git/gaoxing/gaoxTest.git</span><br><span class="line"></span><br><span class="line">git remote set-url --add oginin http://githubXXXXX</span><br><span class="line"></span><br><span class="line">http://githubXXXXXX : 是在GitHub里的‘clone or download’获得的</span><br></pre></td></tr></table></figure>
+<p>ooNoIndent00查看远程仓库情况。可以看到git上有两个远程仓库的 push 地址。<em>这种方法的好处是每次只需要</em> push一次就行了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 
       
     </div>
