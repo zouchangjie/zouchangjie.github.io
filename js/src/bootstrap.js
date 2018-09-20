@@ -52,12 +52,12 @@ $(document).ready(function () {
 });
 
 
-// 特定段落(标志 ooNoIndent00)不缩进
-$('p:contains("ooNoIndent00")').each(function() {
+// 特定段落(标志 00SuoJin00)缩进
+$('p:contains("00SuoJin00")').each(function() {
   var str = $(this).text();
-  if (str.match("^ooNoIndent00")) {
+  if (str.match("^00SuoJin00")) {
     var text = $(this).html();
-    $(this).css('text-indent', '0em');
-    $(this).html(text.replace('ooNoIndent00', '')); 
+    $(this).css('text-indent', '2em');
+    $(this).html(text.replace('00SuoJin00', '')); 
   }
 });

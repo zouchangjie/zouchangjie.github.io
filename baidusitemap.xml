@@ -4,14 +4,34 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/09/13/git/</loc>
-    <lastmod>2018-09-14T12:45:52.560Z</lastmod>
+    <loc>http://yoursite.com/2018/09/20/TensorFlowWarning/</loc>
+    <lastmod>2018-09-20T11:52:39.448Z</lastmod>
     <data>
         <display>
-        <title>GitLab和GitHub的同步</title>
+        <title>运行tensorflow出现FutureWarning</title>
+        <pubTime>2018-09-20T11:39:15.000Z</pubTime>
+        
+        <tag>tensorflow</tag>
+         
+         
+           
+             
+              <breadCrumb title="神经网络" url="http://yoursite.com/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/13/installFLow/</loc>
+    <lastmod>2018-09-19T12:11:28.977Z</lastmod>
+    <data>
+        <display>
+        <title>在ubuntu下安装Flow</title>
         <pubTime>2018-09-13T11:39:15.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>ubuntu</tag>
          
          
            
@@ -24,30 +44,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/07/23/Planning/</loc>
-    <lastmod>2018-09-14T11:46:30.217Z</lastmod>
-    <data>
-        <display>
-        <title>学习计划</title>
-        <pubTime>2018-07-23T01:39:15.000Z</pubTime>
-        
-        <tag>总计划</tag>
-         
-        <tag>数据挖掘</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2018/07/19/My-Qiu-Qiu/</loc>
-    <lastmod>2018-09-14T11:46:29.485Z</lastmod>
+    <lastmod>2018-09-19T07:51:41.382Z</lastmod>
     <data>
         <display>
         <title>写的一些话</title>
@@ -69,8 +67,50 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/09/13/git/</loc>
+    <lastmod>2018-09-19T07:30:32.333Z</lastmod>
+    <data>
+        <display>
+        <title>GitLab和GitHub的同步</title>
+        <pubTime>2018-09-13T11:39:15.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="随手记" url="http://yoursite.com/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/23/Planning/</loc>
+    <lastmod>2018-09-19T07:28:36.763Z</lastmod>
+    <data>
+        <display>
+        <title>学习计划</title>
+        <pubTime>2018-07-23T01:39:15.000Z</pubTime>
+        
+        <tag>总计划</tag>
+         
+        <tag>数据挖掘</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/09/05/daily9/</loc>
-    <lastmod>2018-09-14T11:46:27.424Z</lastmod>
+    <lastmod>2018-09-19T06:46:32.647Z</lastmod>
     <data>
         <display>
         <title>九月日记</title>
