@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/09/20/bkhomework180920/</loc>
+    <lastmod>2018-09-20T13:55:06.756Z</lastmod>
+    <data>
+        <display>
+        <title>实验室入门任务</title>
+        <pubTime>2018-09-20T13:39:15.000Z</pubTime>
+        
+        <tag>新手入门任务</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/09/20/TensorFlowWarning/</loc>
-    <lastmod>2018-09-20T11:52:39.448Z</lastmod>
+    <lastmod>2018-09-20T11:56:45.641Z</lastmod>
     <data>
         <display>
         <title>运行tensorflow出现FutureWarning</title>
