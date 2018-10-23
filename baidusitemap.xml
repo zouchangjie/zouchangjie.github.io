@@ -4,6 +4,58 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/07/23/Planning/</loc>
+    <lastmod>2018-10-23T09:47:05.344Z</lastmod>
+    <data>
+        <display>
+        <title>学习计划</title>
+        <pubTime>2018-07-23T01:39:15.000Z</pubTime>
+        
+        <tag>总计划</tag>
+         
+        <tag>数据挖掘</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/10/21/SUMO%E6%93%8D%E4%BD%9C%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2018-10-21T08:12:30.361Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2018-10-21T08:12:29.112Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/10/16/%E5%BC%80%E5%90%AF%E5%B1%80%E5%9F%9F%E7%BD%91/</loc>
+    <lastmod>2018-10-16T12:46:53.576Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2018-10-16T12:45:23.599Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/10/08/bkhomework180914/</loc>
     <lastmod>2018-10-08T13:54:46.412Z</lastmod>
     <data>
@@ -121,28 +173,6 @@
            
              
               <breadCrumb title="随手记" url="http://yoursite.com/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/23/Planning/</loc>
-    <lastmod>2018-09-19T07:28:36.763Z</lastmod>
-    <data>
-        <display>
-        <title>学习计划</title>
-        <pubTime>2018-07-23T01:39:15.000Z</pubTime>
-        
-        <tag>总计划</tag>
-         
-        <tag>数据挖掘</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
