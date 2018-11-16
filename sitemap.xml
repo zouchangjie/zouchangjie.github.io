@@ -2,112 +2,119 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/hexo.html</loc>
+    
+    <lastmod>2018-11-16T08:43:04.197Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%8A%9E%E5%85%AC/%E6%8A%A5%E8%B4%A6%E5%A4%87%E5%BF%98.html</loc>
+    
+    <lastmod>2018-11-16T07:14:37.626Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zzlking.github.io/about/index.html</loc>
     
     <lastmod>2018-11-14T13:57:33.209Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/14/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/%E7%90%90%E7%A2%8E/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/%E7%90%90%E7%A2%8E/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%91%BD%E4%BB%A4.html</loc>
     
     <lastmod>2018-11-14T13:41:26.399Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/07/19/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/My-Qiu-Qiu/</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/My-Qiu-Qiu.html</loc>
     
     <lastmod>2018-11-14T13:40:52.081Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/14/%E7%94%9F%E6%B4%BB/%E6%B8%B8%E6%88%8F/%E9%A5%A5%E8%8D%92/</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E6%B8%B8%E6%88%8F/%E9%A5%A5%E8%8D%92.html</loc>
     
     <lastmod>2018-11-14T13:40:48.793Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/13/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/git/</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/git.html</loc>
     
     <lastmod>2018-11-14T13:40:09.966Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/20/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/%E7%90%90%E7%A2%8E/TensorFlowWarning/</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/%E7%90%90%E7%A2%8E/TensorFlowWarning.html</loc>
     
     <lastmod>2018-11-14T13:39:01.187Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/13/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/hexo/</loc>
-    
-    <lastmod>2018-11-14T13:38:26.958Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/09/20/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180920/</loc>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180920.html</loc>
     
     <lastmod>2018-11-14T13:32:43.349Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/14/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180914/</loc>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180914.html</loc>
     
     <lastmod>2018-11-14T13:32:40.255Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/14/%E5%AD%A6%E4%B9%A0/%E4%BA%A4%E9%80%9A%E4%BB%BF%E7%9C%9F/SUMO%E6%93%8D%E4%BD%9C%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E4%BA%A4%E9%80%9A%E4%BB%BF%E7%9C%9F/SUMO%E6%93%8D%E4%BD%9C%E6%95%99%E7%A8%8B.html</loc>
     
     <lastmod>2018-11-14T13:32:36.457Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/13/%E5%AD%A6%E4%B9%A0/%E4%BA%A4%E9%80%9A%E4%BB%BF%E7%9C%9F/Install_FLow/</loc>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E4%BA%A4%E9%80%9A%E4%BB%BF%E7%9C%9F/Install_FLow.html</loc>
     
     <lastmod>2018-11-14T13:32:29.917Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/07/23/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/Planning/</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/Planning.html</loc>
     
     <lastmod>2018-11-14T13:30:56.352Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/05/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/daily9/</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E6%97%A5%E8%AE%B0/daily9.html</loc>
     
     <lastmod>2018-11-14T13:20:02.017Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>https://zzlking.github.io/tags/index.html</loc>
     
     <lastmod>2018-07-26T13:07:01.885Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/schedule/index.html</loc>
+    <loc>https://zzlking.github.io/schedule/index.html</loc>
     
     <lastmod>2018-07-26T13:06:55.615Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>https://zzlking.github.io/categories/index.html</loc>
     
     <lastmod>2018-07-26T13:06:38.717Z</lastmod>
     

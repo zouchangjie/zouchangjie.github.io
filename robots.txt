@@ -1,6 +1,7 @@
 # hexo robots.txt
 User-agent: * Allow: /
 Allow: /archives/
+Disallow: /categories/生活/
 Disallow: /vendors/
 Disallow: /js/
 Disallow: /css/
@@ -8,5 +9,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://lancelot_lewis.coding.me/sitemap.xml
-Sitemap: http://lancelot_lewis.coding.me/baidusitemap.xml
+Sitemap: https://zzlking.github.io/sitemap.xml
+Sitemap: https://zzlking.github.io/baidusitemap.xml
