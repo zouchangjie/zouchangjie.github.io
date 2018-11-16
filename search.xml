@@ -9,9 +9,9 @@
         <category>办公</category>
       </categories>
       <tags>
+        <tag>琐碎</tag>
         <tag>随手记</tag>
         <tag>计财处</tag>
-        <tag>琐碎</tag>
       </tags>
   </entry>
   <entry>
@@ -35,8 +35,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>随手记</tag>
         <tag>琐碎</tag>
+        <tag>随手记</tag>
         <tag>tensorflow</tag>
       </tags>
   </entry>
@@ -49,8 +49,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>随手记</tag>
         <tag>琐碎</tag>
+        <tag>随手记</tag>
       </tags>
   </entry>
   <entry>
@@ -100,22 +100,22 @@
         <category>交通仿真</category>
       </categories>
       <tags>
-        <tag>琐碎</tag>
         <tag>ubuntu</tag>
         <tag>环境配置</tag>
+        <tag>琐碎</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo相关命令]]></title>
     <url>%2F%E7%94%9F%E6%B4%BB%2F%E5%B7%A5%E5%85%B7%2Fhexo.html</url>
-    <content type="text"><![CDATA[Hexo相关命令 hexo的apihttps://hexo.io/zh-cn/docs/writing.html hexo的常用命令12345678hexo server -p 4001hexo new [layout] &lt;title&gt;hexo clean hexo g hexo dhexo clean &amp;&amp; hexo g &amp;&amp; hexo dhexo clean &amp;&amp; hexo g &amp;&amp; hexo server -p 4001 评论系统https://ioliu.cn/2017/add-valine-comments-to-your-blog/ 修改日志特定段落缩进 123456789101112// 特定段落(标志ooNoIndent00)缩进// 是因为修改了~\blog\themes\next\source\js\src\bootstaps.js 文件// 添加了下面一段话// 特定段落(标志ooNoIndent00)缩进$('p:contains("ooNoIndent00")').each(function() &#123; var str = $(this).text(); if (str.match("ooNoIndent00")) &#123; var text = $(this).html(); $(this).css('text-indent', '0em'); $(this).html(text.replace('ooNoIndent00', '')); &#125;&#125;); 密码输入 12345678910111213// ~\blog\themes\next\layout\_partials\head.swig&lt;!-- #增加个输入密码的功能 # --&gt;&lt;script&gt; (function()&#123; if('&#123;&#123; page.password &#125;&#125;')&#123; if (prompt('请输入文章密码') !== '&#123;&#123; page.password &#125;&#125;')&#123; alert('密码错误！'); location.href='/' &#125; &#125; &#125;)();&lt;/script&gt; 首页隐藏 1234567891011121314// ~\blog\themes\next\layout\index.swig&lt;!-- #增加个首页隐藏的功能 # --&gt;&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;% if post.visible !== 'hide' %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &lt;/section&gt; &#123;% include '_partials/pagination.swig' %&#125;&#123;% endblock %&#125; 首行缩进 1234567// ~\blog\themes\next\source\css_custom\custom.styl:// Custom styles.// 设置段落首行缩进（text-indent），调整段落下部间距.post-body p &#123; text-indent: 0em; margin-bottom: 0.8em; &#125; 增加站点搜索功能搜索功能真心好用，当文章多起来的时候，标签提供的作用已经很少了，只能简单索引，搜索却能精确查找，这里我用的依旧是最简单的本地站内搜索。 安装插件 1npm install hexo-generator-searchdb --save 修改站点配置文件 12345search: path: search.xml field: post format: html limit: 10000 修改主题配置文件 12local_search: enable: true 修改hexo文章链接HEXO默认的文章链接形式为domain/year/month/day/postname，默认就是一个四级url，并且可能造成url过长，对搜索引擎是十分不友好的，我们可以改成 domain/postname 的形式。编辑站点_config.yml文件，修改其中的permalink字段改为permalink: :title.html即可。]]></content>
+    <content type="text"><![CDATA[Hexo相关命令，以及我对Hexo和Next的修改日志 hexo的apihttps://hexo.io/zh-cn/docs/writing.html hexo的常用命令12345678hexo server -p 4001hexo new [layout] &lt;title&gt;hexo clean hexo g hexo dhexo clean &amp;&amp; hexo g &amp;&amp; hexo dhexo clean &amp;&amp; hexo g &amp;&amp; hexo server -p 4001 评论系统https://ioliu.cn/2017/add-valine-comments-to-your-blog/ 修改日志特定段落缩进 123456789101112// 特定段落(标志ooNoIndent00)缩进// 是因为修改了~\blog\themes\next\source\js\src\bootstaps.js 文件// 添加了下面一段话// 特定段落(标志ooNoIndent00)缩进$('p:contains("ooNoIndent00")').each(function() &#123; var str = $(this).text(); if (str.match("ooNoIndent00")) &#123; var text = $(this).html(); $(this).css('text-indent', '0em'); $(this).html(text.replace('ooNoIndent00', '')); &#125;&#125;); 密码输入 12345678910111213// ~\blog\themes\next\layout\_partials\head.swig&lt;!-- #增加个输入密码的功能 # --&gt;&lt;script&gt; (function()&#123; if('&#123;&#123; page.password &#125;&#125;')&#123; if (prompt('请输入文章密码') !== '&#123;&#123; page.password &#125;&#125;')&#123; alert('密码错误！'); location.href='/' &#125; &#125; &#125;)();&lt;/script&gt; 首页隐藏 1234567891011121314// ~\blog\themes\next\layout\index.swig&lt;!-- #增加个首页隐藏的功能 # --&gt;&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;% if post.visible !== 'hide' %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &lt;/section&gt; &#123;% include '_partials/pagination.swig' %&#125;&#123;% endblock %&#125; 首行缩进 1234567// ~\blog\themes\next\source\css_custom\custom.styl:// Custom styles.// 设置段落首行缩进（text-indent），调整段落下部间距.post-body p &#123; text-indent: 0em; margin-bottom: 0.8em; &#125; 增加站点搜索功能搜索功能真心好用，当文章多起来的时候，标签提供的作用已经很少了，只能简单索引，搜索却能精确查找，这里我用的依旧是最简单的本地站内搜索。 安装插件 1npm install hexo-generator-searchdb --save 修改站点配置文件 12345search: path: search.xml field: post format: html limit: 10000 修改主题配置文件 12local_search: enable: true 修改hexo文章链接HEXO默认的文章链接形式为domain/year/month/day/postname，默认就是一个四级url，并且可能造成url过长，对搜索引擎是十分不友好的，我们可以改成 domain/postname 的形式。编辑站点_config.yml文件，修改其中的permalink字段改为permalink: :title.html即可。]]></content>
       <categories>
         <category>生活</category>
         <category>工具</category>
       </categories>
       <tags>
-        <tag>随手记</tag>
         <tag>琐碎</tag>
+        <tag>随手记</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -128,8 +128,8 @@
         <category>工具</category>
       </categories>
       <tags>
-        <tag>随手记</tag>
         <tag>琐碎</tag>
+        <tag>随手记</tag>
         <tag>git</tag>
       </tags>
   </entry>
