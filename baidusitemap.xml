@@ -4,18 +4,16 @@
 
     
   <url>
-    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/hexo.html</loc>
-    <lastmod>2018-11-16T08:55:40.755Z</lastmod>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/BlogLog.html</loc>
+    <lastmod>2018-12-04T12:51:08.713Z</lastmod>
     <data>
         <display>
-        <title>Hexo相关命令</title>
-        <pubTime>2018-09-13T11:39:15.000Z</pubTime>
+        <title>博客修改日志</title>
+        <pubTime>2018-12-04T13:39:15.000Z</pubTime>
         
-        <tag>琐碎</tag>
-         
-        <tag>随手记</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>next</tag>
          
          
            
@@ -31,16 +29,89 @@
 
     
   <url>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/BlogIndex.html</loc>
+    <lastmod>2018-12-04T12:22:47.072Z</lastmod>
+    <data>
+        <display>
+        <title>博客索引</title>
+        <pubTime>2018-12-04T12:39:15.000Z</pubTime>
+        
+        <tag>索引</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://zzlking.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="工具" url="https://zzlking.github.io/categories/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180920.html</loc>
+    <lastmod>2018-12-04T12:01:07.033Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习入门任务02</title>
+        <pubTime>2018-09-20T13:39:15.000Z</pubTime>
+        
+        <tag>新手入门任务</tag>
+         
+        <tag>机器学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
+             
+              <breadCrumb title="机器学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180914.html</loc>
+    <lastmod>2018-12-04T11:39:11.045Z</lastmod>
+    <data>
+        <display>
+        <title>机器学习入门任务01</title>
+        <pubTime>2018-09-14T13:39:15.000Z</pubTime>
+        
+        <tag>新手入门任务</tag>
+         
+        <tag>机器学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
+             
+              <breadCrumb title="机器学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%8A%9E%E5%85%AC/%E6%8A%A5%E8%B4%A6%E5%A4%87%E5%BF%98.html</loc>
-    <lastmod>2018-11-16T07:14:37.626Z</lastmod>
+    <lastmod>2018-12-04T10:48:08.232Z</lastmod>
     <data>
         <display>
         <title>报账备忘录</title>
         <pubTime>2018-11-16T07:10:08.000Z</pubTime>
         
-        <tag>琐碎</tag>
-         
         <tag>随手记</tag>
+         
+        <tag>琐碎</tag>
          
         <tag>计财处</tag>
          
@@ -57,6 +128,58 @@
     </url>
 
     
+  <url>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%8A%9E%E5%85%AC/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%B4%A2%E5%BC%95.html</loc>
+    <lastmod>2018-12-04T10:47:32.080Z</lastmod>
+    <data>
+        <display>
+        <title>实验室索引</title>
+        <pubTime>2018-01-16T07:10:08.000Z</pubTime>
+        
+        <tag>实验室索引</tag>
+         
+        <tag>导师介绍</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://zzlking.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="办公" url="https://zzlking.github.io/categories/%E7%94%9F%E6%B4%BB/%E5%8A%9E%E5%85%AC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/hexo.html</loc>
+    <lastmod>2018-11-16T08:55:40.755Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo相关命令</title>
+        <pubTime>2018-09-13T11:39:15.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>随手记</tag>
+         
+        <tag>琐碎</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活" url="https://zzlking.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+          
+             
+              <breadCrumb title="工具" url="https://zzlking.github.io/categories/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/%E7%90%90%E7%A2%8E/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%91%BD%E4%BB%A4.html</loc>
@@ -66,9 +189,9 @@
         <title>开局域网</title>
         <pubTime>2018-09-14T13:39:15.000Z</pubTime>
         
-        <tag>琐碎</tag>
-         
         <tag>随手记</tag>
+         
+        <tag>琐碎</tag>
          
          
            
@@ -137,11 +260,11 @@
         <title>GitLab和GitHub的同步</title>
         <pubTime>2018-09-13T08:39:15.000Z</pubTime>
         
-        <tag>琐碎</tag>
-         
         <tag>随手记</tag>
          
         <tag>git</tag>
+         
+        <tag>琐碎</tag>
          
          
            
@@ -164,9 +287,9 @@
         <title>运行tensorflow出现FutureWarning</title>
         <pubTime>2018-09-20T11:39:15.000Z</pubTime>
         
-        <tag>琐碎</tag>
-         
         <tag>随手记</tag>
+         
+        <tag>琐碎</tag>
          
         <tag>tensorflow</tag>
          
@@ -177,52 +300,6 @@
           
              
               <breadCrumb title="工具" url="https://zzlking.github.io/categories/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180920.html</loc>
-    <lastmod>2018-11-14T13:32:43.349Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习入门任务02</title>
-        <pubTime>2018-09-20T13:39:15.000Z</pubTime>
-        
-        <tag>新手入门任务</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-          
-             
-              <breadCrumb title="机器学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180914.html</loc>
-    <lastmod>2018-11-14T13:32:40.255Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习入门任务01</title>
-        <pubTime>2018-09-14T13:39:15.000Z</pubTime>
-        
-        <tag>新手入门任务</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-          
-             
-              <breadCrumb title="机器学习" url="https://zzlking.github.io/categories/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -264,11 +341,11 @@
         <title>在ubuntu下安装Flow</title>
         <pubTime>2018-09-13T11:39:15.000Z</pubTime>
         
+        <tag>琐碎</tag>
+         
         <tag>ubuntu</tag>
          
         <tag>环境配置</tag>
-         
-        <tag>琐碎</tag>
          
          
            

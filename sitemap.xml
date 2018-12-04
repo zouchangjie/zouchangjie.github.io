@@ -2,16 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/hexo.html</loc>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/BlogLog.html</loc>
     
-    <lastmod>2018-11-16T08:55:40.755Z</lastmod>
+    <lastmod>2018-12-04T12:51:08.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/BlogIndex.html</loc>
+    
+    <lastmod>2018-12-04T12:22:47.072Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180920.html</loc>
+    
+    <lastmod>2018-12-04T12:01:07.033Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180914.html</loc>
+    
+    <lastmod>2018-12-04T11:39:11.045Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%8A%9E%E5%85%AC/%E6%8A%A5%E8%B4%A6%E5%A4%87%E5%BF%98.html</loc>
     
-    <lastmod>2018-11-16T07:14:37.626Z</lastmod>
+    <lastmod>2018-12-04T10:48:08.232Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%8A%9E%E5%85%AC/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%B4%A2%E5%BC%95.html</loc>
+    
+    <lastmod>2018-12-04T10:47:32.080Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/hexo.html</loc>
+    
+    <lastmod>2018-11-16T08:55:40.755Z</lastmod>
     
   </url>
   
@@ -54,20 +89,6 @@
     <loc>https://zzlking.github.io/%E7%94%9F%E6%B4%BB/%E5%B7%A5%E5%85%B7/%E7%90%90%E7%A2%8E/TensorFlowWarning.html</loc>
     
     <lastmod>2018-11-14T13:39:01.187Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180920.html</loc>
-    
-    <lastmod>2018-11-14T13:32:43.349Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zzlking.github.io/%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/bkhomework180914.html</loc>
-    
-    <lastmod>2018-11-14T13:32:40.255Z</lastmod>
     
   </url>
   
