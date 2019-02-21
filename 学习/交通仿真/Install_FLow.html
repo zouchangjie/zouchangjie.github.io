@@ -6,10 +6,10 @@
   <title>在ubuntu下安装Flow | 小邹邹</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Flow是个基于SUMO的交通仿真程序，但是苦于不支持Windows系统，只支持Linux/MacOS系统。本文就是记录怎安装该软件">
-<meta name="keywords" content="琐碎,ubuntu,环境配置">
+<meta name="keywords" content="ubuntu,环境配置,琐碎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在ubuntu下安装Flow">
-<meta property="og:url" content="https://zzlking.github.io/学习/交通仿真/Install_FLow.html">
+<meta property="og:url" content="https://zouchangjie.github.io/学习/交通仿真/Install_FLow.html">
 <meta property="og:site_name" content="小邹邹">
 <meta property="og:description" content="Flow是个基于SUMO的交通仿真程序，但是苦于不支持Windows系统，只支持Linux/MacOS系统。本文就是记录怎安装该软件">
 <meta property="og:locale" content="zh-CN">
@@ -152,7 +152,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/OSM/" style="font-size: 10px;">OSM</a> <a href="/tags/SUMO/" style="font-size: 10px;">SUMO</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/实验室索引/" style="font-size: 10px;">实验室索引</a> <a href="/tags/导师介绍/" style="font-size: 10px;">导师介绍</a> <a href="/tags/新手入门任务/" style="font-size: 13.33px;">新手入门任务</a> <a href="/tags/机器学习/" style="font-size: 13.33px;">机器学习</a> <a href="/tags/环境配置/" style="font-size: 10px;">环境配置</a> <a href="/tags/琐碎/" style="font-size: 20px;">琐碎</a> <a href="/tags/索引/" style="font-size: 10px;">索引</a> <a href="/tags/计财处/" style="font-size: 10px;">计财处</a> <a href="/tags/随手记/" style="font-size: 16.67px;">随手记</a> <a href="/tags/饥荒/" style="font-size: 10px;">饥荒</a>
+                        <a href="/tags/OSM/" style="font-size: 10px;">OSM</a> <a href="/tags/SUMO/" style="font-size: 10px;">SUMO</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/实验室索引/" style="font-size: 10px;">实验室索引</a> <a href="/tags/导师介绍/" style="font-size: 10px;">导师介绍</a> <a href="/tags/新手入门任务/" style="font-size: 14px;">新手入门任务</a> <a href="/tags/新手入门教程/" style="font-size: 10px;">新手入门教程</a> <a href="/tags/机器学习/" style="font-size: 16px;">机器学习</a> <a href="/tags/环境配置/" style="font-size: 10px;">环境配置</a> <a href="/tags/琐碎/" style="font-size: 20px;">琐碎</a> <a href="/tags/索引/" style="font-size: 10px;">索引</a> <a href="/tags/计财处/" style="font-size: 10px;">计财处</a> <a href="/tags/随手记/" style="font-size: 18px;">随手记</a> <a href="/tags/饥荒/" style="font-size: 10px;">饥荒</a>
                     </div>
                 </section>
                 
@@ -286,10 +286,10 @@
 <h3 id="1-1-安装git"><a href="#1-1-安装git" class="headerlink" title="1.1 安装git"></a>1.1 安装git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gits</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-安装Anaconda"><a href="#1-2-安装Anaconda" class="headerlink" title="1.2 安装Anaconda"></a>1.2 安装Anaconda</h3><p>下载好.sh 文件 然后直接在命令行下运行</p>
 <p>anaconda 换源</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 设置环境变量</span></span></span><br><span class="line">gedit ~/.bashrc</span><br><span class="line">export PATH="/opt/STM/STLinux-2.3/devkit/sh4/bin:$PATH"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span># 设置环境变量</span><br><span class="line">gedit ~/.bashrc</span><br><span class="line">export PATH="/opt/STM/STLinux-2.3/devkit/sh4/bin:$PATH"</span><br></pre></td></tr></table></figure>
 <h3 id="1-3-安装PyCharm"><a href="#1-3-安装PyCharm" class="headerlink" title="1.3 安装PyCharm"></a>1.3 安装PyCharm</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./******.sh</span><br></pre></td></tr></table></figure>
 <p><strong>第一步：安装Flow</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/flow-project/flow.git</span><br><span class="line">cd flow</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> create a conda environment</span></span><br><span class="line">conda env create -f environment.yml</span><br><span class="line">source activate flow</span><br><span class="line">python setup.py develop</span><br><span class="line">./scripts/setup_sumo_ubuntu1604.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> install flow within the environment</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/flow-project/flow.git</span><br><span class="line">cd flow</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> create a conda environment</span><br><span class="line">conda env create -f environment.yml</span><br><span class="line">source activate flow</span><br><span class="line">python setup.py develop</span><br><span class="line">./scripts/setup_sumo_ubuntu1604.sh</span><br><span class="line"><span class="meta">#</span> install flow within the environment</span><br></pre></td></tr></table></figure>
 
       
       
@@ -350,8 +350,8 @@
         <p><span>发布时间:</span>2018年09月13日 - 19时39分</p>
         <p><span>最后更新:</span>2018年11月14日 - 21时32分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/学习/交通仿真/Install_FLow.html" title="在ubuntu下安装Flow">https://zzlking.github.io/学习/交通仿真/Install_FLow.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://zzlking.github.io/学习/交通仿真/Install_FLow.html　　作者: 七月" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/学习/交通仿真/Install_FLow.html" title="在ubuntu下安装Flow">https://zouchangjie.github.io/学习/交通仿真/Install_FLow.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://zouchangjie.github.io/学习/交通仿真/Install_FLow.html　　作者: 七月" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -463,7 +463,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/生活/工具/BlogLog.html">博客修改日志</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/BlogIndex.html">博客索引</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/办公/报账备忘.html">报账备忘录</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180920.html">机器学习入门任务02</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/琐碎/TensorFlowWarning.html">运行tensorflow出现FutureWarning</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/游戏/饥荒.html">饥荒作弊命令</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180914.html">机器学习入门任务01</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/琐碎/局域网命令.html">开局域网</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/交通仿真/SUMO操作教程.html">OSM地图文件转SUMO</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/hexo.html">Hexo相关命令</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/交通仿真/Install_FLow.html">在ubuntu下安装Flow</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/git.html">GitLab和GitHub的同步</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/办公/实验室索引.html">实验室索引</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/生活/工具/BlogLog.html">博客修改日志</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/BlogIndex.html">博客索引</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/办公/报账备忘.html">报账备忘录</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework190221.html">机器学习算法解决思路与建议</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180915.html">机器学习入门任务02</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180124.html">机器学习入门教程03</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/琐碎/TensorFlowWarning.html">运行tensorflow出现FutureWarning</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/琐碎/局域网命令.html">开局域网</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/游戏/饥荒.html">饥荒作弊命令</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180914.html">机器学习入门任务01</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/交通仿真/SUMO操作教程.html">OSM地图文件转SUMO</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/hexo.html">Hexo相关命令</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/交通仿真/Install_FLow.html">在ubuntu下安装Flow</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/git.html">GitLab和GitHub的同步</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/办公/实验室索引.html">实验室索引</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -493,7 +493,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2018 七月
+                &copy; 2019 七月
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman

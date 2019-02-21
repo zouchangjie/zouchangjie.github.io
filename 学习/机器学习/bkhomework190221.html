@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>机器学习算法解决思路与建议 | 小邹邹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本次的目的是对于kaggle入门的新手要求，学会机器学习算法解决思路。打卡！！！">
+<meta name="keywords" content="新手入门任务,机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习算法解决思路与建议">
+<meta property="og:url" content="https://zouchangjie.github.io/学习/机器学习/bkhomework190221.html">
+<meta property="og:site_name" content="小邹邹">
+<meta property="og:description" content="本次的目的是对于kaggle入门的新手要求，学会机器学习算法解决思路。打卡！！！">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/2.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/3.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/4.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/5.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/Bayesian-Algorithms.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/Clustering-Algorithms.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/Assoication-Rule-Learning-Algorithms.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/Artificial-Neural-Network-Algorithms.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/Deep-Learning-Algorithms.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/Dimensional-Reduction-Algorithms.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/Ensemble-Algorithms.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/ml_conceptsklearn_ml_cheat_sheet.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/ml_concept6_rows.jpg">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/ml_conceptpairlot_distrib.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/cov.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/learning_curve_1.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/learning_curve_2.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/11&14.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/best_2.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/regularization.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/regularization1.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/l1_regularization.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/learning_curve_3.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/data_visualization.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/non-linear-feature.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/complex_model.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/SGDClassifier.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/8_8.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/random_projection.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/PCA.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/t-SNE.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/picture_st/loss_function.png">
+<meta property="og:updated_time" content="2019-02-21T08:17:45.931Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习算法解决思路与建议">
+<meta name="twitter:description" content="本次的目的是对于kaggle入门的新手要求，学会机器学习算法解决思路。打卡！！！">
+<meta name="twitter:image" content="https://zouchangjie.github.io/images/picture_st/2.png">
+  
+    <link rel="alternative" href="/atom.xml" title="小邹邹" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">七月</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">软贱攻城师，无敌程序猿</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/OSM/" style="font-size: 10px;">OSM</a> <a href="/tags/SUMO/" style="font-size: 10px;">SUMO</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/实验室索引/" style="font-size: 10px;">实验室索引</a> <a href="/tags/导师介绍/" style="font-size: 10px;">导师介绍</a> <a href="/tags/新手入门任务/" style="font-size: 14px;">新手入门任务</a> <a href="/tags/新手入门教程/" style="font-size: 10px;">新手入门教程</a> <a href="/tags/机器学习/" style="font-size: 16px;">机器学习</a> <a href="/tags/环境配置/" style="font-size: 10px;">环境配置</a> <a href="/tags/琐碎/" style="font-size: 20px;">琐碎</a> <a href="/tags/索引/" style="font-size: 10px;">索引</a> <a href="/tags/计财处/" style="font-size: 10px;">计财处</a> <a href="/tags/随手记/" style="font-size: 18px;">随手记</a> <a href="/tags/饥荒/" style="font-size: 10px;">饥荒</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">七月</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">七月</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">软贱攻城师，无敌程序猿</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-学习/机器学习/bkhomework190221" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/学习/机器学习/bkhomework190221.html" class="article-date">
+      <time datetime="2018-09-20T13:39:15.000Z" itemprop="datePublished">2018-09-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      机器学习算法解决思路与建议
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习/">学习</a><a class="article-category-link" href="/categories/学习/机器学习/">机器学习</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/新手入门任务/">新手入门任务</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>本次的目的是对于kaggle入门的新手要求，学会机器学习算法解决思路。打卡！！！</p>
+</blockquote>
+<a id="more"></a> 
+<h1 id="1-引言"><a href="#1-引言" class="headerlink" title="1.引言"></a>1.引言</h1><p>实战练习提起笔来写这篇博客，突然有点愧疚和尴尬。愧疚的是，工作杂事多，加之懒癌严重，导致这个系列一直没有更新，向关注该系列的同学们道个歉。尴尬的是，按理说，机器学习介绍与算法一览应该放在最前面写，详细的应用建议应该在讲完机器学习常用算法之后写，突然莫名奇妙在中间插播这么一篇，好像有点打乱主线。<br>老话说『亡羊补牢，为时未晚』，前面开头忘讲的东西，咱在这块儿补上。我们先带着大家过一遍传统机器学习算法，基本思想和用途。把问题解决思路和方法应用建议提前到这里的想法也很简单，希望能提前给大家一些小建议，对于某些容易出错的地方也先给大家打个预防针，这样在理解后续相应机器学习算法之后，使用起来也有一定的章法。</p>
+<h1 id="2-机器学习算法简述"><a href="#2-机器学习算法简述" class="headerlink" title="2.机器学习算法简述"></a>2.机器学习算法简述</h1><p>按照不同的分类标准，可以把机器学习的算法做不同的分类。</p>
+<h2 id="2-1-从机器学习问题角度分类"><a href="#2-1-从机器学习问题角度分类" class="headerlink" title="2.1 从机器学习问题角度分类"></a>2.1 从机器学习问题角度分类</h2><p>我们先从机器学习问题本身分类的角度来看，我们可以分成下列类型的算法：</p>
+<ul>
+<li>监督学习算法</li>
+</ul>
+<p>机器学习中有一大部分的问题属于『监督学习』的范畴，简单口语化地说明，这类问题中，给定的训练样本中，每个样本的输入x都对应一个确定的结果y，<br>我们需要训练出一个模型(数学上看是一个x→y的映射关系f)，在未知的样本x′给定后，我们能对结果y′做出预测。</p>
+<p>这里的预测结果如果是离散值(很多时候是类别类型，比如邮件分类问题中的垃圾邮件/普通邮件，比如用户会/不会购买某商品)，<br>那么我们把它叫做分类问题(classification problem)；如果预测结果是连续值(比如房价，股票价格等等)，<br>那么我们把它叫做回归问题(regression problem)。<br>有一系列的机器学习算法是用以解决监督学习问题的，<br>比如最经典的用于分类问题的朴素贝叶斯、逻辑回归、<br>支持向量机等等；比如说用于回归问题的线性回归等等。</p>
+<ul>
+<li>无监督学习算法</li>
+</ul>
+<p>有另外一类问题，给我们的样本并没有给出『标签/标准答案』，就是一系列的样本。而我们需要做的事情是，在一些样本中抽取出通用的规则。<br>这叫做『无监督学习』。包括关联规则和聚类算法在内的一系列机器学习算法都属于这个范畴。</p>
+<ul>
+<li>半监督学习算法</li>
+</ul>
+<p>这类问题给出的训练数据，有一部分有标签，有一部分没有标签。我们想学习出数据组织结构的同时，也能做相应的预测。此类问题相对应的机器学习算法有自训练(Self-Training)、直推学习(Transductive Learning)、生成式模型(Generative Model)等。</p>
+<p>总体说来，最常见是前两类问题，而对应前两类问题的一些机器学习算法如下：</p>
+<ul>
+<li><img src="/images/picture_st/2.png" alt="1.png"></li>
+</ul>
+<h2 id="2-2-从算法的功能角度分类"><a href="#2-2-从算法的功能角度分类" class="headerlink" title="2.2 从算法的功能角度分类"></a>2.2 从算法的功能角度分类</h2><p>我们也可以从算法的共性(比如功能，运作方式)角度对机器学习算法分类。下面我们根据算法的共性去对它们归个类。不过需要注意的是，我们下面的归类方法可能对分类和回归有比较强的倾向性，而这两类问题也是最常遇到的。</p>
+<h3 id="2-2-1-回归算法-Regression-Algorithms"><a href="#2-2-1-回归算法-Regression-Algorithms" class="headerlink" title="2.2.1 回归算法(Regression Algorithms)"></a>2.2.1 回归算法(Regression Algorithms)</h3><ul>
+<li><img src="/images/picture_st/3.png" alt="1.png"></li>
+</ul>
+<p>回归算法是一种通过最小化预测值与实际结果值之间的差距，而得到输入特征之间的最佳组合方式的一类算法。对于连续值预测有线性回归等，而对于离散值/类别预测，我们也可以把逻辑回归等也视作回归算法的一种，常见的回归算法如下：</p>
+<ul>
+<li>Ordinary Least Squares Regression (OLSR)</li>
+<li>Linear Regression</li>
+<li>Logistic Regression</li>
+<li>Stepwise Regression</li>
+<li>Locally Estimated Scatterplot Smoothing (LOESS)</li>
+<li>Multivariate Adaptive Regression Splines (MARS)</li>
+</ul>
+<h3 id="2-2-2-基于实例的算法-Instance-based-Algorithms"><a href="#2-2-2-基于实例的算法-Instance-based-Algorithms" class="headerlink" title="2.2.2 基于实例的算法(Instance-based Algorithms)"></a>2.2.2 基于实例的算法(Instance-based Algorithms)</h3><ul>
+<li><img src="/images/picture_st/4.png" alt="1.png"></li>
+</ul>
+<p>这里所谓的基于实例的算法，我指的是我们最后建成的模型，对原始数据样本实例依旧有很强的依赖性。这类算法在做预测决策时，一般都是使用某类相似度准则，去比对待预测的样本和原始样本的相近度，再给出相应的预测结果。常见的基于实例的算法有：</p>
+<ul>
+<li>k-Nearest Neighbour (kNN)</li>
+<li>Learning Vector Quantization (LVQ)</li>
+<li>Self-Organizing Map (SOM)</li>
+<li>Locally Weighted Learning (LWL)</li>
+</ul>
+<h3 id="2-2-3-决策树类算法-Decision-Tree-Algorithms"><a href="#2-2-3-决策树类算法-Decision-Tree-Algorithms" class="headerlink" title="2.2.3 决策树类算法(Decision Tree Algorithms)"></a>2.2.3 决策树类算法(Decision Tree Algorithms)</h3><ul>
+<li><img src="/images/picture_st/5.png" alt="1.png"></li>
+</ul>
+<p>决策树类算法，会基于原始数据特征，构建一颗包含很多决策路径的树。预测阶段选择路径进行决策。常见的决策树算法包括：</p>
+<ul>
+<li>Classification and Regression Tree (CART)</li>
+<li>Iterative Dichotomiser 3 (ID3)</li>
+<li>C4.5 and C5.0 (different versions of a powerful approach)</li>
+<li>Chi-squared Automatic Interaction Detection (CHAID)</li>
+<li>M5</li>
+<li>Conditional Decision Trees</li>
+</ul>
+<h3 id="2-2-4-贝叶斯类算法-Bayesian-Algorithms"><a href="#2-2-4-贝叶斯类算法-Bayesian-Algorithms" class="headerlink" title="2.2.4 贝叶斯类算法(Bayesian Algorithms)"></a>2.2.4 贝叶斯类算法(Bayesian Algorithms)</h3><ul>
+<li><img src="/images/picture_st/Bayesian-Algorithms.png" alt="1.png"></li>
+</ul>
+<p>这里说的贝叶斯类算法，指的是在分类和回归问题中，隐含使用了贝叶斯原理的算法。包括：</p>
+<ul>
+<li>Naive Bayes</li>
+<li>Gaussian Naive Bayes</li>
+<li>Multinomial Naive Bayes</li>
+<li>Averaged One-Dependence Estimators (AODE)</li>
+<li>Bayesian Belief Network (BBN)</li>
+<li>Bayesian Network (BN)</li>
+</ul>
+<h3 id="2-2-5-聚类算法-Clustering-Algorithms"><a href="#2-2-5-聚类算法-Clustering-Algorithms" class="headerlink" title="2.2.5 聚类算法(Clustering Algorithms)"></a>2.2.5 聚类算法(Clustering Algorithms)</h3><ul>
+<li><img src="/images/picture_st/Clustering-Algorithms.png" alt="1.png"></li>
+</ul>
+<p>聚类算法做的事情是，把输入样本聚成围绕一些中心的『数据团』，以发现数据分布结构的一些规律。常用的聚类算法包括：</p>
+<ul>
+<li>k-Means</li>
+<li>Hierarchical Clustering</li>
+<li>Expectation Maximisation (EM)</li>
+</ul>
+<h3 id="2-2-6-关联规则算法-Association-Rule-Learning-Algorithms"><a href="#2-2-6-关联规则算法-Association-Rule-Learning-Algorithms" class="headerlink" title="2.2.6 关联规则算法(Association Rule Learning Algorithms)"></a>2.2.6 关联规则算法(Association Rule Learning Algorithms)</h3><ul>
+<li><img src="/images/picture_st/Assoication-Rule-Learning-Algorithms.png" alt="1.png"></li>
+</ul>
+<p>关联规则算法是这样一类算法：它试图抽取出，最能解释观察到的训练样本之间关联关系的规则，也就是获取一个事件和其他事件之间依赖或关联的知识，常见的关联规则算法有：</p>
+<ul>
+<li>Apriori algorithm</li>
+<li>Eclat algorithm</li>
+</ul>
+<h3 id="2-2-7-人工神经网络类算法-Artificial-Neural-Network-Algorithms"><a href="#2-2-7-人工神经网络类算法-Artificial-Neural-Network-Algorithms" class="headerlink" title="2.2.7 人工神经网络类算法(Artificial Neural Network Algorithms)"></a>2.2.7 人工神经网络类算法(Artificial Neural Network Algorithms)</h3><ul>
+<li><img src="/images/picture_st/Artificial-Neural-Network-Algorithms.png" alt="1.png"><br>这是受人脑神经元工作方式启发而构造的一类算法。需要提到的一点是，我把『深度学习』单拎出来了，这里说的人工神经网络偏向于更传统的感知算法，主要包括：</li>
+<li>Perceptron</li>
+<li>Back-Propagation</li>
+<li>Radial Basis Function Network (RBFN)</li>
+</ul>
+<h3 id="2-2-8-深度学习-Deep-Learning-Algorithms"><a href="#2-2-8-深度学习-Deep-Learning-Algorithms" class="headerlink" title="2.2.8 深度学习(Deep Learning Algorithms)"></a>2.2.8 深度学习(Deep Learning Algorithms)</h3><ul>
+<li><img src="/images/picture_st/Deep-Learning-Algorithms.png" alt="1.png"></li>
+</ul>
+<p>深度学习是近年来非常火的机器学习领域，相对于上面列的人工神经网络算法，它通常情况下，有着更深的层次和更复杂的结构。有兴趣的同学可以看看我们另一个系列机器学习与计算机视觉，最常见的深度学习算法包括：</p>
+<ul>
+<li>Deep Boltzmann Machine (DBM)</li>
+<li>Deep Belief Networks (DBN)</li>
+<li>Convolutional Neural Network (CNN)</li>
+<li>Stacked Auto-Encoders</li>
+</ul>
+<h3 id="2-2-9-降维算法-Dimensionality-Reduction-Algorithms"><a href="#2-2-9-降维算法-Dimensionality-Reduction-Algorithms" class="headerlink" title="2.2.9 降维算法(Dimensionality Reduction Algorithms)"></a>2.2.9 降维算法(Dimensionality Reduction Algorithms)</h3><ul>
+<li><img src="/images/picture_st/Dimensional-Reduction-Algorithms.png" alt="1.png"></li>
+</ul>
+<p>从某种程度上说，降维算法和聚类其实有点类似，因为它也在试图发现原始训练数据的固有结构，但是降维算法在试图，用更少的信息(更低维的信息)总结和描述出原始信息的大部分内容。<br>有意思的是，降维算法一般在数据的可视化，或者是降低数据计算空间有很大的作用。它作为一种机器学习的算法，很多时候用它先处理数据，再灌入别的机器学习算法学习。主要的降维算法包括：</p>
+<ul>
+<li>Principal Component Analysis (PCA)</li>
+<li>Principal Component Regression (PCR)</li>
+<li>Partial Least Squares Regression (PLSR)</li>
+<li>Sammon Mapping</li>
+<li>Multidimensional Scaling (MDS)</li>
+<li>Linear Discriminant Analysis (LDA)</li>
+<li>Mixture Discriminant Analysis (MDA)</li>
+<li>Quadratic Discriminant Analysis (QDA)</li>
+</ul>
+<h3 id="2-2-10-模型融合算法-Ensemble-Algorithms"><a href="#2-2-10-模型融合算法-Ensemble-Algorithms" class="headerlink" title="2.2.10 模型融合算法(Ensemble Algorithms)"></a>2.2.10 模型融合算法(Ensemble Algorithms)</h3><ul>
+<li><img src="/images/picture_st/Ensemble-Algorithms.png" alt="1.png"></li>
+</ul>
+<p>严格意义上来说，这不算是一种机器学习算法，而更像是一种优化手段/策略，它通常是结合多个简单的弱机器学习算法，去做更可靠的决策。拿分类问题举个例，直观的理解，就是单个分类器的分类是可能出错，不可靠的，但是如果多个分类器投票，那可靠度就会高很多。常用的模型融合增强方法包括：</p>
+<ul>
+<li>Random Forest</li>
+<li>Boosting</li>
+<li>Bootstrapped Aggregation (Bagging)</li>
+<li>AdaBoost</li>
+<li>Stacked Generalization (blending)</li>
+<li>Gradient Boosting Machines (GBM)</li>
+<li>Gradient Boosted Regression Trees (GBRT)</li>
+</ul>
+<h2 id="2-3-机器学习算法使用图谱"><a href="#2-3-机器学习算法使用图谱" class="headerlink" title="2.3 机器学习算法使用图谱"></a>2.3 机器学习算法使用图谱</h2><p>scikit-learn作为一个丰富的python机器学习库，实现了绝大多数机器学习的算法，有相当多的人在使用，于是我这里很无耻地把machine learning cheat sheet for sklearn搬过来了，<br>原文可以看<a href="http://peekaboo-vision.blogspot.de/2013/01/machine-learning-cheat-sheet-for-scikit.html" target="_blank" rel="noopener">这里</a>。哈哈，既然讲机器学习，我们就用机器学习的语言来解释一下，这是针对实际应用场景的各种条件限制，对scikit-learn里完成的算法构建的一颗决策树，每一组条件都是对应一条路径，能找到相对较为合适的一些解决方法，具体如下：</p>
+<ul>
+<li><img src="/images/picture_st/ml_conceptsklearn_ml_cheat_sheet.png" alt="1.png"></li>
+</ul>
+<p>首先样本量如果非常少的话，其实所有的机器学习算法都没有办法从里面『学到』通用的规则和模式，so多弄点数据是王道。然后根据问题是有/无监督学习和连续值/离散值预测，分成了分类、聚类、回归和维度约减四个方法类，每个类里根据具体情况的不同，又有不同的处理方法。</p>
+<p>#3. 机器学习问题解决思路</p>
+<p>上面带着代价走马观花过了一遍机器学习的若干算法，下面我们试着总结总结在拿到一个实际问题的时候，如果着手使用机器学习算法去解决问题，其中的一些注意点以及核心思路。主要包括以下内容：</p>
+<ul>
+<li>拿到数据后怎么了解数据(可视化)</li>
+<li>选择最贴切的机器学习算法</li>
+<li>定位模型状态(过/欠拟合)以及解决方法</li>
+<li>大量极的数据的特征分析与可视化</li>
+<li>各种损失函数(loss function)的优缺点及如何选择<br>多说一句，这里写的这个小教程，主要是作为一个通用的建议和指导方案，你不一定要严格按照这个流程解决机器学习问题。</li>
+</ul>
+<h2 id="3-1-数据与可视化"><a href="#3-1-数据与可视化" class="headerlink" title="3.1 数据与可视化"></a>3.1 数据与可视化</h2><p>我们先使用scikit-learn的make_classification函数来生产一份分类数据，然后模拟一下拿到实际数据后我们需要做的事情。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#numpy科学计算工具箱</span><br><span class="line">import numpy as np</span><br><span class="line">#使用make_classification构造1000个样本，每个样本有20个feature</span><br><span class="line">from sklearn.datasets import make_classification</span><br><span class="line">X, y = make_classification(1000, n_features=20, n_informative=2,n_redundant=2, n_classes=2, random_state=0)</span><br><span class="line">#存为dataframe格式</span><br><span class="line">from pandas import DataFrame</span><br><span class="line">df = DataFrame(np.hstack((X, y[:, None])),columns = range(20) + [&quot;class&quot;])</span><br></pre></td></tr></table></figure></p>
+<p>我们生成了一份包含1000个分类数据样本的数据集，每个样本有20个数值特征。同时我们把数据存储至pandas中的DataFrame数据结构中。我们取前几行的数据看一眼：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[:6]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="/images/picture_st/ml_concept6_rows.jpg" alt="1.png"><br>不幸的是，肉眼看数据，尤其是维度稍微高点的时候，很有可能看花了也看不出看不出任何线索。幸运的是，我们对于图像的理解力，比数字好太多，而又有相当多的工具可以帮助我们『可视化』数据分布</li>
+</ul>
+<blockquote>
+<p>我们在处理任何数据相关的问题时，了解数据都是很有必要的，而可视化可以帮助我们更好地直观理解数据的分布和特性</p>
+</blockquote>
+<p>数据的可视化有很多工具包可以用，比如下面我们用来做数据可视化的工具包Seaborn。最简单的可视化就是数据散列分布图和柱状图，这个可以用Seanborn的pairplot来完成。以下图中2种颜色表示2种不同的类，因为20维的可视化没有办法在平面表示，我们取出了一部分维度，两两组成pair看数据在这2个维度平面上的分布状况，代码和结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import seaborn as sns</span><br><span class="line">#使用pairplot去看不同特征维度pair下数据的空间分布状况</span><br><span class="line">_ = sns.pairplot(df[:50], vars=[8, 11, 12, 14, 19], hue=&quot;class&quot;, size=1.5)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="/images/picture_st/ml_conceptpairlot_distrib.png" alt="1.png"></li>
+</ul>
+<p>我们从散列图和柱状图上可以看出，确实有些维度的特征相对其他维度，有更好的区分度，比如第11维和14维看起来很有区分度。这两个维度上看，数据点是近似线性可分的。而12维和19维似乎呈现出了很高的负相关性。接下来我们用Seanborn中的corrplot来计算计算各维度特征之间(以及最后的类别)的相关性。代码和结果图如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.figure(figsize=(12, 10))</span><br><span class="line">_ = sns.corrplot(df, annot=False)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><img src="/images/picture_st/cov.png" alt="1.png"><br>相关性图很好地印证了我们之前的想法，可以看到第11维特征和第14维特征和类别有极强的相关性，同时它们俩之间也有极高的相关性。而第12维特征和第19维特征却呈现出极强的负相关性。强相关的特征其实包含了一些冗余的特征，而除掉上图中颜色较深的特征，其余特征包含的信息量就没有这么大了，它们和最后的类别相关度不高，甚至各自之间也没什么先惯性。</li>
+</ul>
+<p>插一句，这里的维度只有20，所以这个相关度计算并不费太大力气，然而实际情形中，你完全有可能有远高于这个数字的特征维度，同时样本量也可能多很多，那种情形下我们可能要先做一些处理，再来实现可视化了。别着急，一会儿我们会讲到。</p>
+<h2 id="3-2-机器学习算法选择"><a href="#3-2-机器学习算法选择" class="headerlink" title="3.2 机器学习算法选择"></a>3.2 机器学习算法选择</h2><p>数据的情况我们大致看了一眼，确定一些特征维度之后，我们可以考虑先选用机器学习算法做一个baseline的系统出来了。这里我们继续参照上面提到过的机器学习算法使用图谱。<br>我们只有1000个数据样本，是分类问题，同时是一个有监督学习，因此我们根据图谱里教的方法，使用LinearSVC(support vector classification with linear kernel)试试。注意，LinearSVC需要选择正则化方法以缓解过拟合问题；我们这里选择使用最多的L2正则化，并把惩罚系数C设为10。我们改写一下sklearn中的学习曲线绘制函数，画出训练集和交叉验证集上的得分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.svm import LinearSVC</span><br><span class="line">from sklearn.learning_curve import learning_curve</span><br><span class="line">#绘制学习曲线，以确定模型的状况</span><br><span class="line">def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,</span><br><span class="line">                        train_sizes=np.linspace(.1, 1.0, 5)):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    画出data在某模型上的learning curve.</span><br><span class="line">    参数解释</span><br><span class="line">    ----------</span><br><span class="line">    estimator : 你用的分类器。</span><br><span class="line">    title : 表格的标题。</span><br><span class="line">    X : 输入的feature，numpy类型</span><br><span class="line">    y : 输入的target vector</span><br><span class="line">    ylim : tuple格式的(ymin, ymax), 设定图像中纵坐标的最低点和最高点</span><br><span class="line">    cv : 做cross-validation的时候，数据分成的份数，其中一份作为cv集，其余n-1份作为training(默认为3份)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    </span><br><span class="line">    plt.figure()</span><br><span class="line">    train_sizes, train_scores, test_scores = learning_curve(</span><br><span class="line">        estimator, X, y, cv=5, n_jobs=1, train_sizes=train_sizes)</span><br><span class="line">    train_scores_mean = np.mean(train_scores, axis=1)</span><br><span class="line">    train_scores_std = np.std(train_scores, axis=1)</span><br><span class="line">    test_scores_mean = np.mean(test_scores, axis=1)</span><br><span class="line">    test_scores_std = np.std(test_scores, axis=1)</span><br><span class="line"></span><br><span class="line">    plt.fill_between(train_sizes, train_scores_mean - train_scores_std,</span><br><span class="line">                     train_scores_mean + train_scores_std, alpha=0.1,</span><br><span class="line">                     color=&quot;r&quot;)</span><br><span class="line">    plt.fill_between(train_sizes, test_scores_mean - test_scores_std,</span><br><span class="line">                     test_scores_mean + test_scores_std, alpha=0.1, color=&quot;g&quot;)</span><br><span class="line">    plt.plot(train_sizes, train_scores_mean, &apos;o-&apos;, color=&quot;r&quot;,</span><br><span class="line">             label=&quot;Training score&quot;)</span><br><span class="line">    plt.plot(train_sizes, test_scores_mean, &apos;o-&apos;, color=&quot;g&quot;,</span><br><span class="line">             label=&quot;Cross-validation score&quot;)</span><br><span class="line"></span><br><span class="line">    plt.xlabel(&quot;Training examples&quot;)</span><br><span class="line">    plt.ylabel(&quot;Score&quot;)</span><br><span class="line">    plt.legend(loc=&quot;best&quot;)</span><br><span class="line">    plt.grid(&quot;on&quot;) </span><br><span class="line">    if ylim:</span><br><span class="line">        plt.ylim(ylim)</span><br><span class="line">    plt.title(title)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">#少样本的情况情况下绘出学习曲线</span><br><span class="line">plot_learning_curve(LinearSVC(C=10.0), &quot;LinearSVC(C=10.0)&quot;,</span><br><span class="line">                    X, y, ylim=(0.8, 1.01),</span><br><span class="line">                    train_sizes=np.linspace(.05, 0.2, 5))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="/images/picture_st/learning_curve_1.png" alt="1.png"></li>
+</ul>
+<p>这幅图上，我们发现随着样本量的增加，训练集上的得分有一定程度的下降，交叉验证集上的得分有一定程度的上升，但总体说来，两者之间有很大的差距，训练集上的准确度远高于交叉验证集。这其实意味着我们的模型处于过拟合的状态，也即模型太努力地刻画训练集，一不小心把很多噪声的分布也拟合上了，导致在新数据上的泛化能力变差了。</p>
+<h3 id="3-2-1-过拟合的定位与解决"><a href="#3-2-1-过拟合的定位与解决" class="headerlink" title="3.2.1 过拟合的定位与解决"></a>3.2.1 过拟合的定位与解决</h3><p>问题来了，过拟合咋办？<br>针对过拟合，有几种办法可以处理：</p>
+<ul>
+<li><p>增大样本量<br>这个比较好理解吧，过拟合的主要原因是模型太努力地去记住训练样本的分布状况，而加大样本量，可以使得训练集的分布更加具备普适性，噪声对整体的影响下降。恩，我们提高点样本量试试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#增大一些样本量</span><br><span class="line">plot_learning_curve(LinearSVC(C=10.0), &quot;LinearSVC(C=10.0)&quot;,</span><br><span class="line">                    X, y, ylim=(0.8, 1.1),</span><br><span class="line">                    train_sizes=np.linspace(.1, 1.0, 5))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><img src="/images/picture_st/learning_curve_2.png" alt="1.png"></p>
+</li>
+</ul>
+<p>是不是发现问题好了很多？随着我们增大训练样本量，我们发现训练集和交叉验证集上的得分差距在减少，最后它们已经非常接近了。增大样本量，最直接的方法当然是想办法去采集相同场景下的新数据，如果实在做不到，也可以试试在已有数据的基础上做一些人工的处理生成新数据(比如图像识别中，我们可能可以对图片做镜像变换、旋转等等)，当然，这样做一定要谨慎，强烈建议想办法采集真实数据。</p>
+<ul>
+<li><p>减少特征的量(只用我们觉得有效的特征)<br>比如在这个例子中，我们之前的数据可视化和分析的结果表明，第11和14维特征包含的信息对识别类别非常有用，我们可以只用它们。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot_learning_curve(LinearSVC(C=10.0), &quot;LinearSVC(C=10.0) Features: 11&amp;14&quot;, X[:, [11, 14]], y, ylim=(0.8, 1.0), train_sizes=np.linspace(.05, 0.2, 5))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><img src="/images/picture_st/11&amp;14.png" alt="1.png"><br>从上图上可以看出，过拟合问题也得到一定程度的缓解。不过我们这是自己观察后，手动选出11和14维特征。那能不能自动进行特征组合和选择呢，其实我们当然可以遍历特征的组合样式，然后再进行特征选择(前提依旧是这里特征的维度不高，如果高的话，遍历所有的组合是一个非常非常非常耗时的过程！！)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.pipeline import Pipeline</span><br><span class="line">from sklearn.feature_selection import SelectKBest, f_classif</span><br><span class="line"># SelectKBest(f_classif, k=2) 会根据Anova F-value选出 最好的k=2个特征</span><br><span class="line"></span><br><span class="line">plot_learning_curve(Pipeline([(&quot;fs&quot;, SelectKBest(f_classif, k=2)), # select two features</span><br><span class="line">                               (&quot;svc&quot;, LinearSVC(C=10.0))]), &quot;SelectKBest(f_classif, k=2) + LinearSVC(C=10.0)&quot;, X, y, ylim=(0.8, 1.0), train_sizes=np.linspace(.05, 0.2, 5))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><img src="/images/picture_st/best_2.png" alt="1.png"><br>如果你自己跑一下程序，会发现在我们自己手造的这份数据集上，这个特征筛选的过程超级顺利，但依旧像我们之前提过的一样，这是因为特征的维度不太高。<br>从另外一个角度看，我们之所以做特征选择，是想降低模型的复杂度，而更不容易刻画到噪声数据的分布。从这个角度出发，我们还可以有(1)多项式你和模型中降低多项式次数 (2)神经网络中减少神经网络的层数和每层的结点数 ©SVM中增加RBF-kernel的bandwidth等方式来降低模型的复杂度。<br>话说回来，即使以上提到的办法降低模型复杂度后，好像能在一定程度上缓解过拟合，但是我们一般还是不建议一遇到过拟合，就用这些方法处理，优先用下面的方法：</p>
+</li>
+<li><p>增强正则化作用(比如说这里是减小LinearSVC中的C参数)<br>正则化是我认为在不损失信息的情况下，最有效的缓解过拟合现象的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot_learning_curve(LinearSVC(C=0.1), &quot;LinearSVC(C=0.1)&quot;, X, y, ylim=(0.8, 1.0), train_sizes=np.linspace(.05, 0.2, 5))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><img src="/images/picture_st/regularization.png" alt="1.png"><br>调整正则化系数后，发现确实过拟合现象有一定程度的缓解，但依旧是那个问题，我们现在的系数是自己敲定的，有没有办法可以自动选择最佳的这个参数呢？可以。我们可以在交叉验证集上做grid-search查找最好的正则化系数(对于大数据样本，我们依旧需要考虑时间问题，这个过程可能会比较慢):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.grid_search import GridSearchCV</span><br><span class="line">estm = GridSearchCV(LinearSVC(), </span><br><span class="line">                   param_grid=&#123;&quot;C&quot;: [0.001, 0.01, 0.1, 1.0, 10.0]&#125;)</span><br><span class="line">plot_learning_curve(estm, &quot;LinearSVC(C=AUTO)&quot;, </span><br><span class="line">                    X, y, ylim=(0.8, 1.0),</span><br><span class="line">                    train_sizes=np.linspace(.05, 0.2, 5))</span><br><span class="line">print &quot;Chosen parameter on 100 datapoints: %s&quot; % estm.fit(X[:500], y[:500]).best_params_</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在500个点得到的结果是：{‘C’: 0.01}<br>使用新的C参数，我们再看看学习曲线：</p>
+<ul>
+<li><img src="/images/picture_st/regularization1.png" alt="1.png"><br>对于特征选择的部分，我打算多说几句，我们刚才看过了用sklearn.feature_selection中的SelectKBest来选择特征的过程，也提到了在高维特征的情况下，这个过程可能会非常非常慢。那我们有别的办法可以进行特征选择吗？比如说，我们的分类器自己能否甄别那些特征是对最后的结果有益的？这里有个实际工作中用到的小技巧。</li>
+</ul>
+<p>我们知道：</p>
+<ul>
+<li>l2正则化，它对于最后的特征权重的影响是，尽量打散权重到每个特征维度上，不让权重集中在某些维度上，出现权重特别高的特征。</li>
+<li>而l1正则化，它对于最后的特征权重的影响是，让特征获得的权重稀疏化，也就是对结果影响不那么大的特征，干脆就拿不着权重。</li>
+</ul>
+<p>那基于这个理论，我们可以把SVC中的正则化替换成l1正则化，让其自动甄别哪些特征应该留下权重。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot_learning_curve(LinearSVC(C=0.1, penalty=&apos;l1&apos;, dual=False), &quot;LinearSVC(C=0.1, penalty=&apos;l1&apos;)&quot;, X, y, ylim=(0.8, 1.0), train_sizes=np.linspace(.05, 0.2, 5))</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><img src="/images/picture_st/l1_regularization.png" alt="1.png"><br>好了，我们一起来看看最后特征获得的权重：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">estm = LinearSVC(C=0.1, penalty=&apos;l1&apos;, dual=False)</span><br><span class="line">estm.fit(X[:450], y[:450])  # 用450个点来训练</span><br><span class="line">print &quot;Coefficients learned: %s&quot; % est.coef_</span><br><span class="line">print &quot;Non-zero coefficients: %s&quot; % np.nonzero(estm.coef_)[1]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>得到结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Coefficients learned: [[ 0.          0.          0.          0.          0.          0.01857999</span><br><span class="line">   0.          0.          0.          0.004135    0.          1.05241369</span><br><span class="line">   0.01971419  0.          0.          0.          0.         -0.05665314</span><br><span class="line">   0.14106505  0.        ]]</span><br><span class="line">Non-zero coefficients: [5 9 11 12 17 18]</span><br></pre></td></tr></table></figure></p>
+<p>你看，5 9 11 12 17 18这些维度的特征获得了权重，而第11维权重最大，也说明了它影响程度最大。</p>
+<h3 id="3-2-2-欠拟合定位与解决"><a href="#3-2-2-欠拟合定位与解决" class="headerlink" title="3.2.2 欠拟合定位与解决"></a>3.2.2 欠拟合定位与解决</h3><p>我们再随机生成一份数据[1000*20]的数据(但是分布和之前有变化)，重新使用LinearSVC来做分类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#构造一份环形数据</span><br><span class="line">from sklearn.datasets import make_circles</span><br><span class="line">X, y = make_circles(n_samples=1000, random_state=2)</span><br><span class="line">#绘出学习曲线</span><br><span class="line">plot_learning_curve(LinearSVC(C=0.25),&quot;LinearSVC(C=0.25)&quot;,X, y, ylim=(0.5, 1.0),train_sizes=np.linspace(.1, 1.0, 5))</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><img src="/images/picture_st/learning_curve_3.png" alt="1.png"><br>简直烂出翔了有木有，二分类问题，我们做随机猜测，准确率都有0.5，这比随机猜测都高不了多少！！！怎么办？</li>
+</ul>
+<p>不要盲目动手收集更多资料，或者调整正则化参数。我们从学习曲线上其实可以看出来，训练集上的准确度和交叉验证集上的准确度都很低，这其实就对应了我们说的『欠拟合』状态。别急，我们回到我们的数据，还是可视化看看：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = DataFrame(np.hstack((X, y[:, None])), columns = range(2) + [&quot;class&quot;])</span><br><span class="line">_ = sns.pairplot(df, vars=[0, 1], hue=&quot;class&quot;, size=3.5)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="/images/picture_st/data_visualization.png" alt="1.png"><br>你发现什么了，数据根本就没办法线性分割！！！，所以你再找更多的数据，或者调整正则化参数，都是无济于事的！！！</li>
+</ul>
+<p>那我们又怎么解决欠拟合问题呢？通常有下面一些方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 加入原始特征的平方项作为新特征</span><br><span class="line">X_extra = np.hstack((X, X[:, [0]]**2 + X[:, [1]]**2))</span><br><span class="line">plot_learning_curve(LinearSVC(C=0.25), &quot;LinearSVC(C=0.25) + distance feature&quot;, X_extra, y, ylim=(0.5, 1.0), train_sizes=np.linspace(.1, 1.0, 5))</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><img src="/images/picture_st/non-linear-feature.png" alt="non-linear-feature.png"><br>卧槽，少年，这准确率，被吓尿了有木有啊！！！所以你看，选用的特征影响太大了，当然，我们这里是人工模拟出来的数据，分布太明显了，实际数据上，会比这个麻烦一些，但是在特征上面下的功夫还是很有回报的。</li>
+<li><p>使用更复杂一点的模型(比如说用非线性的核函数)<br>我们对模型稍微调整了一下，用了一个复杂一些的非线性rbf kernel：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.svm import SVC</span><br><span class="line"># note: we use the original X without the extra feature</span><br><span class="line">plot_learning_curve(SVC(C=2.5, kernel=&quot;rbf&quot;, gamma=1.0), &quot;SVC(C=2.5, kernel=&apos;rbf&apos;, gamma=1.0)&quot;,X, y, ylim=(0.5, 1.0), train_sizes=np.linspace(.1, 1.0, 5))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><img src="/images/picture_st/complex_model.png" alt="complex_model.png"></p>
+</li>
+</ul>
+<p>你看，效果依旧很赞。</p>
+<h2 id="3-3-关于大数据样本集和高维特征空间"><a href="#3-3-关于大数据样本集和高维特征空间" class="headerlink" title="3.3 关于大数据样本集和高维特征空间"></a>3.3 关于大数据样本集和高维特征空间</h2><p>我们在小样本的toy dataset上，怎么捣鼓都有好的方法。但是当数据量和特征样本空间膨胀非常厉害时，很多东西就没有那么好使了，至少是一个很耗时的过程。举个例子说，我们现在重新生成一份数据集，但是这次，我们生成更多的数据，更高的特征维度，而分类的类别也提高到5。</p>
+<h3 id="3-3-1-大数据情形下的模型选择与学习曲线"><a href="#3-3-1-大数据情形下的模型选择与学习曲线" class="headerlink" title="3.3.1 大数据情形下的模型选择与学习曲线"></a>3.3.1 大数据情形下的模型选择与学习曲线</h3><p>在上面提到的那样一份数据上，我们用LinearSVC可能就会有点慢了，我们注意到机器学习算法使用图谱推荐我们使用SGDClassifier。其实本质上说，这个模型也是一个线性核函数的模型，不同的地方是，它使用了随机梯度下降做训练，所以每次并没有使用全部的样本，收敛速度会快很多。再多提一点，SGDClassifier对于特征的幅度非常敏感，也就是说，我们在把数据灌给它之前，应该先对特征做幅度调整，当然，用sklearn的StandardScaler可以很方便地完成这一点。</p>
+<p>SGDClassifier每次只使用一部分(mini-batch)做训练，在这种情况下，我们使用交叉验证(cross-validation)并不是很合适，我们会使用相对应的progressive validation：简单解释一下，estimator每次只会拿下一个待训练batch在本次做评估，然后训练完之后，再在这个batch上做一次评估，看看是否有优化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#生成大样本，高纬度特征数据</span><br><span class="line">X, y = make_classification(200000, n_features=200, n_informative=25, n_redundant=0, n_classes=10, class_sep=2, random_state=0)</span><br><span class="line"></span><br><span class="line">#用SGDClassifier做训练，并画出batch在训练前后的得分差</span><br><span class="line">from sklearn.linear_model import SGDClassifier</span><br><span class="line">est = SGDClassifier(penalty=&quot;l2&quot;, alpha=0.001)</span><br><span class="line">progressive_validation_score = []</span><br><span class="line">train_score = []</span><br><span class="line">for datapoint in range(0, 199000, 1000):</span><br><span class="line">    X_batch = X[datapoint:datapoint+1000]</span><br><span class="line">    y_batch = y[datapoint:datapoint+1000]</span><br><span class="line">    if datapoint &gt; 0:</span><br><span class="line">        progressive_validation_score.append(est.score(X_batch, y_batch))</span><br><span class="line">    est.partial_fit(X_batch, y_batch, classes=range(10))</span><br><span class="line">    if datapoint &gt; 0:</span><br><span class="line">        train_score.append(est.score(X_batch, y_batch))</span><br><span class="line">    </span><br><span class="line">plt.plot(train_score, label=&quot;train score&quot;)</span><br><span class="line">plt.plot(progressive_validation_score, label=&quot;progressive validation score&quot;)</span><br><span class="line">plt.xlabel(&quot;Mini-batch&quot;)</span><br><span class="line">plt.ylabel(&quot;Score&quot;)</span><br><span class="line">plt.legend(loc=&apos;best&apos;)  </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>得到如下的结果：</p>
+<ul>
+<li><img src="/images/picture_st/SGDClassifier.png" alt="SGDClassifier.png"><br>从这个图上的得分，我们可以看出在50个mini-batch迭代之后，数据上的得分就已经变化不大了。但是好像得分都不太高，所以我们猜测一下，这个时候我们的数据，处于欠拟合状态。我们刚才在小样本集合上提到了，如果欠拟合，我们可以使用更复杂的模型，比如把核函数设置为非线性的，但遗憾的是像rbf核函数是没有办法和SGDClassifier兼容的。因此我们只能想别的办法了，比如这里，我们可以把SGDClassifier整个替换掉了，用多层感知神经网来完成这个任务，我们之所以会想到多层感知神经网，是因为它也是一个用随机梯度下降训练的算法，同时也是一个非线性的模型。当然根据机器学习算法使用图谱，也可以使用<strong>核估计(kernel-approximation)</strong>来完成这个事情。</li>
+</ul>
+<h3 id="3-3-2-大数据量下的可视化"><a href="#3-3-2-大数据量下的可视化" class="headerlink" title="3.3.2 大数据量下的可视化"></a>3.3.2 大数据量下的可视化</h3><p>大样本数据的可视化是一个相对比较麻烦的事情，一般情况下我们都要用到降维的方法先处理特征。我们找一个例子来看看，可以怎么做，比如我们数据集取经典的『手写数字集』，首先找个方法看一眼这个图片数据集。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#直接从sklearn中load数据集</span><br><span class="line">from sklearn.datasets import load_digits</span><br><span class="line">digits = load_digits(n_class=6)</span><br><span class="line">X = digits.data</span><br><span class="line">y = digits.target</span><br><span class="line">n_samples, n_features = X.shape</span><br><span class="line">print &quot;Dataset consist of %d samples with %d features each&quot; % (n_samples, n_features)</span><br><span class="line"></span><br><span class="line"># 绘制数字示意图</span><br><span class="line">n_img_per_row = 20</span><br><span class="line">img = np.zeros((10 * n_img_per_row, 10 * n_img_per_row))</span><br><span class="line">for i in range(n_img_per_row):</span><br><span class="line">    ix = 10 * i + 1</span><br><span class="line">    for j in range(n_img_per_row):</span><br><span class="line">        iy = 10 * j + 1</span><br><span class="line">        img[ix:ix + 8, iy:iy + 8] = X[i * n_img_per_row + j].reshape((8, 8))</span><br><span class="line"></span><br><span class="line">plt.imshow(img, cmap=plt.cm.binary)</span><br><span class="line">plt.xticks([])</span><br><span class="line">plt.yticks([])</span><br><span class="line">_ = plt.title(&apos;A selection from the 8*8=64-dimensional digits dataset&apos;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><img src="/images/picture_st/8_8.png" alt="8_8.png"><br>我们总共有1083个训练样本，包含手写数字(0,1,2,3,4,5)，每个样本图片中的像素点平铺开都是64位，这个维度显然是没办法直接可视化的。下面我们基于scikit-learn的示例教程对特征用各种方法做降维处理，再可视化。</li>
+</ul>
+<p>随机投射</p>
+<p>我们先看看，把数据随机投射到两个维度上的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#import所需的package</span><br><span class="line">from sklearn import (manifold, decomposition, random_projection)</span><br><span class="line">rp = random_projection.SparseRandomProjection(n_components=2, random_state=42)</span><br><span class="line"></span><br><span class="line">#定义绘图函数</span><br><span class="line">from matplotlib import offsetbox</span><br><span class="line">def plot_embedding(X, title=None):</span><br><span class="line">    x_min, x_max = np.min(X, 0), np.max(X, 0)</span><br><span class="line">    X = (X - x_min) / (x_max - x_min)</span><br><span class="line"></span><br><span class="line">    plt.figure(figsize=(10, 10))</span><br><span class="line">    ax = plt.subplot(111)</span><br><span class="line">    for i in range(X.shape[0]):</span><br><span class="line">        plt.text(X[i, 0], X[i, 1], str(digits.target[i]),</span><br><span class="line">                 color=plt.cm.Set1(y[i] / 10.),</span><br><span class="line">                 fontdict=&#123;&apos;weight&apos;: &apos;bold&apos;, &apos;size&apos;: 12&#125;)</span><br><span class="line"></span><br><span class="line">    if hasattr(offsetbox, &apos;AnnotationBbox&apos;):</span><br><span class="line">        # only print thumbnails with matplotlib &gt; 1.0</span><br><span class="line">        shown_images = np.array([[1., 1.]])  # just something big</span><br><span class="line">        for i in range(digits.data.shape[0]):</span><br><span class="line">            dist = np.sum((X[i] - shown_images) ** 2, 1)</span><br><span class="line">            if np.min(dist) &lt; 4e-3:</span><br><span class="line">                # don&apos;t show points that are too close</span><br><span class="line">                continue</span><br><span class="line">            shown_images = np.r_[shown_images, [X[i]]]</span><br><span class="line">            imagebox = offsetbox.AnnotationBbox(</span><br><span class="line">                offsetbox.OffsetImage(digits.images[i], cmap=plt.cm.gray_r),</span><br><span class="line">                X[i])</span><br><span class="line">            ax.add_artist(imagebox)</span><br><span class="line">    plt.xticks([]), plt.yticks([])</span><br><span class="line">    if title is not None:</span><br><span class="line">        plt.title(title)</span><br><span class="line"></span><br><span class="line">#记录开始时间</span><br><span class="line">start_time = time.time()</span><br><span class="line">X_projected = rp.fit_transform(X)</span><br><span class="line">plot_embedding(X_projected, &quot;Random Projection of the digits (time: %.3fs)&quot; % (time.time() - start_time))</span><br></pre></td></tr></table></figure></p>
+<p>结果如下：</p>
+<ul>
+<li><img src="/images/picture_st/random_projection.png" alt="random_projection.png"></li>
+</ul>
+<p><strong> PCA降维 </strong></p>
+<p>在维度约减/降维领域有一个非常强大的算法叫做PCA(Principal Component Analysis，主成分分析)，它能将原始的绝大多数信息用维度远低于原始维度的几个主成分表示出来。PCA在我们现在的数据集上效果还不错，我们来看看用PCA对原始特征降维至2维后，原始样本在空间的分布状况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from sklearn import (manifold, decomposition, random_projection)</span><br><span class="line">#TruncatedSVD 是 PCA的一种实现</span><br><span class="line">X_pca = decomposition.TruncatedSVD(n_components=2).fit_transform(X)</span><br><span class="line">#记录时间</span><br><span class="line">start_time = time.time()</span><br><span class="line">plot_embedding(X_pca,&quot;Principal Components projection of the digits (time: %.3fs)&quot; % (time.time() - start_time))</span><br></pre></td></tr></table></figure></p>
+<p>得到的结果如下：</p>
+<ul>
+<li><img src="/images/picture_st/PCA.png" alt="PCA.png"></li>
+</ul>
+<p>我们可以看出，效果还不错，不同的手写数字在2维平面上，显示出了区域集中性。即使它们之间有一定的重叠区域。</p>
+<p>如果我们用一些非线性的变换来做降维操作，从原始的64维降到2维空间，效果更好，比如这里我们用到一个技术叫做t-SNE，sklearn的manifold对其进行了实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from sklearn import (manifold, decomposition, random_projection)</span><br><span class="line">#降维</span><br><span class="line">tsne = manifold.TSNE(n_components=2, init=&apos;pca&apos;, random_state=0)</span><br><span class="line">start_time = time.time()</span><br><span class="line">X_tsne = tsne.fit_transform(X)</span><br><span class="line">#绘图</span><br><span class="line">plot_embedding(X_tsne,</span><br><span class="line">               &quot;t-SNE embedding of the digits (time: %.3fs)&quot; % (time.time() - start_time))</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><img src="/images/picture_st/t-SNE.png" alt="t-SNE.png"><br>我们发现结果非常的惊人，似乎这个非线性变换降维过后，仅仅2维的特征，就可以将原始数据的不同类别，在平面上很好地划分开。不过t-SNE也有它的缺点，一般说来，相对于线性变换的降维，它需要更多的计算时间。也不太适合在大数据集上全集使用</li>
+</ul>
+<h2 id="3-4-损失函数的选择"><a href="#3-4-损失函数的选择" class="headerlink" title="3.4 损失函数的选择"></a>3.4 损失函数的选择</h2><p>损失函数的选择对于问题的解决和优化，非常重要。我们先来看一眼各种不同的损失函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.plot as plt</span><br><span class="line"># 改自http://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_loss_functions.html</span><br><span class="line">xmin, xmax = -4, 4</span><br><span class="line">xx = np.linspace(xmin, xmax, 100)</span><br><span class="line">plt.plot([xmin, 0, 0, xmax], [1, 1, 0, 0], &apos;k-&apos;,</span><br><span class="line">         label=&quot;Zero-one loss&quot;)</span><br><span class="line">plt.plot(xx, np.where(xx &lt; 1, 1 - xx, 0), &apos;g-&apos;,</span><br><span class="line">         label=&quot;Hinge loss&quot;)</span><br><span class="line">plt.plot(xx, np.log2(1 + np.exp(-xx)), &apos;r-&apos;,</span><br><span class="line">         label=&quot;Log loss&quot;)</span><br><span class="line">plt.plot(xx, np.exp(-xx), &apos;c-&apos;,</span><br><span class="line">         label=&quot;Exponential loss&quot;)</span><br><span class="line">plt.plot(xx, -np.minimum(xx, 0), &apos;m-&apos;,</span><br><span class="line">         label=&quot;Perceptron loss&quot;)</span><br><span class="line"></span><br><span class="line">plt.ylim((0, 8))</span><br><span class="line">plt.legend(loc=&quot;upper right&quot;)</span><br><span class="line">plt.xlabel(r&quot;Decision function $f(x)$&quot;)</span><br><span class="line">plt.ylabel(&quot;$L(y, f(x))$&quot;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<p>得到结果图像如下：</p>
+<ul>
+<li><img src="/images/picture_st/loss_function.png" alt="loss_function.png"></li>
+<li><strong>0-1损失函数(zero-one loss)</strong>非常好理解，直接对应分类问题中判断错的个数。但是比较尴尬的是它是一个非凸函数，这意味着其实不是那么实用。</li>
+<li>hinge loss(SVM中使用到的)的健壮性相对较高(对于异常点/噪声不敏感)。但是它没有那么好的概率解释。</li>
+<li><strong>log损失函数(log-loss)</strong>的结果能非常好地表征概率分布。因此在很多场景，尤其是多分类场景下，如果我们需要知道结果属于每个类别的置信度，那这个损失函数很适合。缺点是它的健壮性没有那么强，相对hinge loss会对噪声敏感一些。</li>
+<li>多项式损失函数(exponential loss)(AdaBoost中用到的)对离群点/噪声非常非常敏感。但是它的形式对于boosting算法简单而有效。</li>
+<li><strong>感知损失(perceptron loss)</strong>可以看做是hinge loss的一个变种。hinge loss对于判定边界附近的点(正确端)惩罚力度很高。而perceptron loss，只要样本的判定类别结果是正确的，它就是满意的，而不管其离判定边界的距离。优点是比hinge loss简单，缺点是因为不是max-margin boundary，所以得到模型的泛化能力没有hinge loss强。</li>
+</ul>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><p>全文到此就结束了。先走马观花看了一遍机器学习的算法，然后给出了对应scikit-learn的『秘密武器』机器学习算法使用图谱，紧接着从了解数据(可视化)、选择机器学习算法、定位过/欠拟合及解决方法、<br>大量极的数据可视化和损失函数优缺点与选择等方面介绍了实际机器学习问题中的一些思路和方法。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/学习/机器学习/bkhomework190221.html">机器学习算法解决思路与建议</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 七月 的个人博客">七月</a></p>
+        <p><span>发布时间:</span>2018年09月20日 - 21时39分</p>
+        <p><span>最后更新:</span>2019年02月21日 - 16时17分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/学习/机器学习/bkhomework190221.html" title="机器学习算法解决思路与建议">https://zouchangjie.github.io/学习/机器学习/bkhomework190221.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://zouchangjie.github.io/学习/机器学习/bkhomework190221.html　　作者: 七月" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/生活/办公/报账备忘.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          报账备忘录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/学习/机器学习/bkhomework180915.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习入门任务02</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引言"><span class="toc-number">1.</span> <span class="toc-text">1.引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-机器学习算法简述"><span class="toc-number">2.</span> <span class="toc-text">2.机器学习算法简述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-从机器学习问题角度分类"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 从机器学习问题角度分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-从算法的功能角度分类"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 从算法的功能角度分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-回归算法-Regression-Algorithms"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.2.1 回归算法(Regression Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-基于实例的算法-Instance-based-Algorithms"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.2 基于实例的算法(Instance-based Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-决策树类算法-Decision-Tree-Algorithms"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.2.3 决策树类算法(Decision Tree Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-贝叶斯类算法-Bayesian-Algorithms"><span class="toc-number">2.2.4.</span> <span class="toc-text">2.2.4 贝叶斯类算法(Bayesian Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-聚类算法-Clustering-Algorithms"><span class="toc-number">2.2.5.</span> <span class="toc-text">2.2.5 聚类算法(Clustering Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-6-关联规则算法-Association-Rule-Learning-Algorithms"><span class="toc-number">2.2.6.</span> <span class="toc-text">2.2.6 关联规则算法(Association Rule Learning Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-7-人工神经网络类算法-Artificial-Neural-Network-Algorithms"><span class="toc-number">2.2.7.</span> <span class="toc-text">2.2.7 人工神经网络类算法(Artificial Neural Network Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-8-深度学习-Deep-Learning-Algorithms"><span class="toc-number">2.2.8.</span> <span class="toc-text">2.2.8 深度学习(Deep Learning Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-9-降维算法-Dimensionality-Reduction-Algorithms"><span class="toc-number">2.2.9.</span> <span class="toc-text">2.2.9 降维算法(Dimensionality Reduction Algorithms)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-10-模型融合算法-Ensemble-Algorithms"><span class="toc-number">2.2.10.</span> <span class="toc-text">2.2.10 模型融合算法(Ensemble Algorithms)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-机器学习算法使用图谱"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 机器学习算法使用图谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-数据与可视化"><span class="toc-number">2.4.</span> <span class="toc-text">3.1 数据与可视化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-机器学习算法选择"><span class="toc-number">2.5.</span> <span class="toc-text">3.2 机器学习算法选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-过拟合的定位与解决"><span class="toc-number">2.5.1.</span> <span class="toc-text">3.2.1 过拟合的定位与解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-欠拟合定位与解决"><span class="toc-number">2.5.2.</span> <span class="toc-text">3.2.2 欠拟合定位与解决</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-关于大数据样本集和高维特征空间"><span class="toc-number">2.6.</span> <span class="toc-text">3.3 关于大数据样本集和高维特征空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-大数据情形下的模型选择与学习曲线"><span class="toc-number">2.6.1.</span> <span class="toc-text">3.3.1 大数据情形下的模型选择与学习曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-大数据量下的可视化"><span class="toc-number">2.6.2.</span> <span class="toc-text">3.3.2 大数据量下的可视化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-损失函数的选择"><span class="toc-number">2.7.</span> <span class="toc-text">3.4 损失函数的选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-总结"><span class="toc-number">3.</span> <span class="toc-text">4. 总结</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/生活/办公/报账备忘.html" title="上一篇: 报账备忘录">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/学习/机器学习/bkhomework180915.html" title="下一篇: 机器学习入门任务02">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/生活/工具/BlogLog.html">博客修改日志</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/BlogIndex.html">博客索引</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/办公/报账备忘.html">报账备忘录</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework190221.html">机器学习算法解决思路与建议</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180915.html">机器学习入门任务02</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180124.html">机器学习入门教程03</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/琐碎/TensorFlowWarning.html">运行tensorflow出现FutureWarning</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/琐碎/局域网命令.html">开局域网</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/游戏/饥荒.html">饥荒作弊命令</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/机器学习/bkhomework180914.html">机器学习入门任务01</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/交通仿真/SUMO操作教程.html">OSM地图文件转SUMO</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/hexo.html">Hexo相关命令</a></li><li class="post-list-item"><a class="post-list-link" href="/学习/交通仿真/Install_FLow.html">在ubuntu下安装Flow</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/工具/git.html">GitLab和GitHub的同步</a></li><li class="post-list-item"><a class="post-list-link" href="/生活/办公/实验室索引.html">实验室索引</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 七月
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
