@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,新手入门任务," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小邹邹" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="sklearn.feature_selection模块中的类可用于样本集上的特征选择/降维，以提高估计者的准确度分数或提高其在非常高维数据集上的性能。">
+<meta name="keywords" content="机器学习,新手入门任务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习特征选择">
+<meta property="og:url" content="https://zouchangjie.github.io/学习/机器学习/bkhomework190224.html">
+<meta property="og:site_name" content="小邹邹">
+<meta property="og:description" content="sklearn.feature_selection模块中的类可用于样本集上的特征选择/降维，以提高估计者的准确度分数或提高其在非常高维数据集上的性能。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework190224/1.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework19024/2.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework19024/3.png">
+<meta property="og:updated_time" content="2019-02-23T04:58:38.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习特征选择">
+<meta name="twitter:description" content="sklearn.feature_selection模块中的类可用于样本集上的特征选择/降维，以提高估计者的准确度分数或提高其在非常高维数据集上的性能。">
+<meta name="twitter:image" content="https://zouchangjie.github.io/images/bkhomework190224/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zouchangjie.github.io/学习/机器学习/bkhomework190224.html"/>
+
+
+
+
+
+  <title>机器学习特征选择 | 小邹邹</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小邹邹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">软贱攻城师，无敌程序猿</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zouchangjie.github.io/学习/机器学习/bkhomework190224.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小邹邹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习特征选择</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-23T20:39:15+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  sklearn.feature_selection模块中的类可用于样本集上的特征选择/降维，以提高估计者的准确度分数或提高其在非常高维数据集上的性能。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>sklearn.feature_selection模块中的类可用于样本集上的特征选择/降维，以提高估计者的准确度分数或提高其在非常高维数据集上的性能。</p>
+</blockquote>
+<a id="more"></a> 
+<h1 id="删除方差低的要素"><a href="#删除方差低的要素" class="headerlink" title="删除方差低的要素"></a>删除方差低的要素</h1><p>VarianceThreshold是一种简单的特征选择基线方法。它会删除方差不符合某个阈值的所有要素。默认情况下，它会删除所有零方差要素，即在所有样本中具有相同值的要素。</p>
+<p>例如，假设我们有一个具有布尔特征的数据集，并且我们希望删除80％以上样本中的一个或零（打开或关闭）的所有特征。布尔特征是伯努利随机变量，这些变量的方差由下式给出</p>
+<ul>
+<li><img src="/images/bkhomework190224/1.png" alt="1.png"></li>
+</ul>
+<p>所以我们可以选择使用阈值：.8 * (1 - .8)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">X_train = np.array([[ <span class="number">1.</span>, <span class="number">-1.</span>,  <span class="number">2.</span>],</span><br><span class="line">                    [ <span class="number">2.</span>,  <span class="number">0.</span>,  <span class="number">0.</span>],</span><br><span class="line">                    [ <span class="number">0.</span>,  <span class="number">1.</span>, <span class="number">-1.</span>]])</span><br><span class="line">X_scaled = preprocessing.scale(X_train)</span><br><span class="line">X_scaled  </span><br><span class="line">array([[ <span class="number">0.</span>  ..., <span class="number">-1.22</span>...,  <span class="number">1.33</span>...],</span><br><span class="line">       [ <span class="number">1.22</span>...,  <span class="number">0.</span>  ..., <span class="number">-0.26</span>...],</span><br><span class="line">       [<span class="number">-1.22</span>...,  <span class="number">1.22</span>..., <span class="number">-1.06</span>...]])</span><br></pre></td></tr></table></figure>
+<p>缩放数据的均值和单位方差为零：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X_scaled 。mean （axis = <span class="number">0</span> ）</span><br><span class="line">X_scaled 。std （axis = <span class="number">0</span> ）</span><br></pre></td></tr></table></figure></p>
+<p>该preprocessing模块还提供实用程序类StandardScaler，该实用程序类 实现TransformerAPI以计算训练集上的均值和标准偏差，以便稍后能够在测试集上重新应用相同的变换。因此，该类适用于以下的早期步骤 sklearn.pipeline.Pipeline：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scaler = preprocessing.StandardScaler().fit(X_train)</span><br><span class="line">scaler</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">scaler.mean_                                      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">scaler.scale_                                       </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">scaler.transform(X_train)</span><br></pre></td></tr></table></figure>
+<p>然后，可以将缩放器实例用于新数据，以便像在训练集上一样对其进行转换：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test = [[-1., 1., 0.]]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>scaler.transform(X_test)                </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[-2.44…,  1.22…, -0.26…]])</li>
+</ul>
+<p>可以通过传递with_mean=False或with_std=False构造函数来禁用居中或缩放StandardScaler。</p>
+<h2 id="将功能扩展到范围"><a href="#将功能扩展到范围" class="headerlink" title="将功能扩展到范围"></a>将功能扩展到范围</h2><p>另一种标准化是将特征缩放到给定的最小值和最大值之间，通常在0和1之间，或者使每个特征的最大绝对值按比例缩放到单位大小。这可以分别使用MinMaxScaler或实现MaxAbsScaler。</p>
+<p>使用此缩放的动机包括对特征的非常小的标准偏差的鲁棒性以及在稀疏数据中保留零条目。</p>
+<p>以下是将玩具数据矩阵缩放到范围的示例：[0, 1]</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train = np.array([[ 1., -1.,  2.],</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>…                     [ 2.,  0.,  0.],</li>
+<li>…                     [ 0.,  1., -1.]])</li>
+<li>…</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>min_max_scaler = preprocessing.MinMaxScaler()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train_minmax = min_max_scaler.fit_transform(X_train)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train_minmax</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[0.5       , 0.        , 1.        ],</li>
+<li>[1.        , 0.5       , 0.33333333],</li>
+<li>[0.        , 1.        , 0.        ]])</li>
+</ul>
+<p>然后可以将相同的变压器实例应用于在拟合调用期间看不到的一些新测试数据：将应用相同的缩放和移位操作以与对列车数据执行的变换一致：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test = np.array([[-3., -1.,  4.]])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test_minmax = min_max_scaler.transform(X_test)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test_minmax</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[-1.5       ,  0.        ,  1.66666667]])</li>
+</ul>
+<p>可以反省缩放器属性以查找在训练数据上学习的转换的确切性质：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>min_max_scaler.scale_                             </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([0.5       , 0.5       , 0.33…])</li>
+<li></li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>min_max_scaler.min_                               </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([0.        , 0.5       , 0.33…])</li>
+</ul>
+<p>如果MinMaxScaler给出明确的完整公式是：feature_range=(min, max)</p>
+<p>X_std = (X - X.min(axis=0)) / (X.max(axis=0) - X.min(axis=0))</p>
+<p>X_scaled = X_std * (max - min) + min</p>
+<p>MaxAbsScaler以非常类似的方式工作，但通过划分每个特征中的最大最大值，以训练数据在该范围内的方式进行缩放。它适用于已经以零或稀疏数据为中心的数据。[-1, 1]</p>
+<p>以下是如何使用此缩放器使用上一个示例中的玩具数据：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train = np.array([[ 1., -1.,  2.],</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>…                     [ 2.,  0.,  0.],</li>
+<li>…                     [ 0.,  1., -1.]])</li>
+<li>…</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>max_abs_scaler = preprocessing.MaxAbsScaler()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train_maxabs = max_abs_scaler.fit_transform(X_train)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train_maxabs                # doctest +NORMALIZE_WHITESPACE^</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[ 0.5, -1. ,  1. ],</li>
+<li>[ 1. ,  0. ,  0. ],</li>
+<li>[ 0. ,  1. , -0.5]])</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test = np.array([[ -3., -1.,  4.]])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test_maxabs = max_abs_scaler.transform(X_test)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test_maxabs                 </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[-1.5, -1. ,  2. ]])</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>max_abs_scaler.scale_         </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([2.,  1.,  2.])</li>
+</ul>
+<p>至于scale，该模块还提供了方便的函数 minmax_scale和maxabs_scale，如果你不希望创建一个对象。</p>
+<h2 id="缩放稀疏数据"><a href="#缩放稀疏数据" class="headerlink" title="缩放稀疏数据"></a>缩放稀疏数据</h2><p>将稀疏数据居中会破坏数据中的稀疏结构，因此很少是明智之举。但是，缩放稀疏输入是有意义的，尤其是在特征不同的情况下。</p>
+<p>MaxAbsScaler 并且maxabs_scale专门用于扩展稀疏数据，是推荐的解决方案。但是， 只要显式传递给构造函数，scale并且StandardScaler可以接受scipy.sparse矩阵作为输入with_mean=False。否则ValueError会产生一个静音中心会破坏稀疏性并且通常会无意中分配过多的内存而导致执行崩溃。 RobustScaler不能适应稀疏输入，但您可以transform在稀疏输入上使用该方法。</p>
+<p>请注意，缩放器接受Compressed Sparse Rows和Compressed Sparse Columns格式（请参阅scipy.sparse.csr_matrix和 scipy.sparse.csc_matrix）。任何其他稀疏输入将转换为Compressed Sparse Rows表示。为避免不必要的内存复制，建议在上游选择CSR或CSC表示。</p>
+<p>最后，如果预期中心数据足够小，则使用toarray稀疏矩阵的方法显式地将输入转换为数组是另一种选择。</p>
+<h2 id="使用异常值缩放数据"><a href="#使用异常值缩放数据" class="headerlink" title="使用异常值缩放数据"></a>使用异常值缩放数据</h2><p>如果您的数据包含许多异常值，则使用数据的均值和方差进行缩放可能效果不佳。在这些情况下，您可以使用 robust_scale和RobustScaler替代插入式替换。他们对数据的中心和范围使用更可靠的估计。</p>
+<p>参考文献：</p>
+<p>有关集中和缩放数据重要性的进一步讨论，请参阅此常见问题解答：我应该对数据进行标准化/标准化/重新调整吗？</p>
+<p>缩放与美白</p>
+<p>由于下游模型可以进一步对特征的线性独立性做出一些假设，有时不足以独立地对中心和缩放特征。</p>
+<p>为了解决这个问题，你可以用sklearn.decomposition.PCA用 whiten=True，以进一步去除跨功能的线性相关。</p>
+<p>缩放1D阵列</p>
+<p>所有上述功能（即scale，minmax_scale， maxabs_scale，和robust_scale）接受一维数组，其可以在某些特定的情况下是有用的。</p>
+<h2 id="居中核矩阵"><a href="#居中核矩阵" class="headerlink" title="居中核矩阵"></a>居中核矩阵</h2><p>如果你有一个内核的内核矩阵  计算由函数定义的特征空间中的点积 ，a KernelCenterer可以转换内核矩阵，使其包含由定义的特征空间中的内积 然后删除该空间中的平均值。</p>
+<h1 id="非线性变换"><a href="#非线性变换" class="headerlink" title="非线性变换"></a>非线性变换</h1><h2 id="映射到统一分布"><a href="#映射到统一分布" class="headerlink" title="映射到统一分布"></a>映射到统一分布</h2><p>与缩放器一样，QuantileTransformer将所有特征放入相同的已知范围或分布中。然而，通过执行秩变换，它可以平滑不寻常的分布，并且受到异常值的影响小于缩放方法。然而，它确实扭曲了特征内部和特征之间的相关性和距离。</p>
+<p>QuantileTransformer并quantile_transform提供基于分位数函数的非参数变换，将数据映射到0到1之间的均匀分布：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>from sklearn.datasets import load_iris</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>from sklearn.model_selection import train_test_split</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>iris = load_iris()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X, y = iris.data, iris.target</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>quantile_transformer = preprocessing.QuantileTransformer(random_state=0)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_train_trans = quantile_transformer.fit_transform(X_train)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_test_trans = quantile_transformer.transform(X_test)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>np.percentile(X_train[:, 0], [0, 25, 50, 75, 100]) </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([ 4.3,  5.1,  5.8,  6.5,  7.9])</li>
+</ul>
+<p>此功能对应于以cm为单位的萼片长度。应用分位数变换后，这些地标接近先前定义的百分位数：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>np.percentile(X_train_trans[:, 0], [0, 25, 50, 75, 100])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>… </li>
+<li>array([ 0.00… ,  0.24…,  0.49…,  0.73…,  0.99… ])</li>
+</ul>
+<p>这可以在具有类似评论的独立测试集上确认：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>np.percentile(X_test[:, 0], [0, 25, 50, 75, 100])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>… </li>
+<li>array([ 4.4  ,  5.125,  5.75 ,  6.175,  7.3  ])</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>np.percentile(X_test_trans[:, 0], [0, 25, 50, 75, 100])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>… </li>
+<li>array([ 0.01…,  0.25…,  0.46…,  0.60… ,  0.94…])</li>
+</ul>
+<h2 id="映射到高斯分布"><a href="#映射到高斯分布" class="headerlink" title="映射到高斯分布"></a>映射到高斯分布</h2><p>在许多建模方案中，期望数据集中的特征的正常性。功率变换是一系列参数单调变换，旨在将来自任何分布的数据映射到尽可能接近高斯分布，以便稳定方差并最小化偏度。</p>
+<p>PowerTransformer 目前提供两种这样的功率变换，即Yeo-Johnson变换和Box-Cox变换。</p>
+<ul>
+<li><p><img src="/images/bkhomework19024/2.png" alt="2.png"><br>Box-Cox只能应用于严格的正数据。在这两种方法中，转换都通过参数化，这是通过最大似然估计确定的。下面是使用Box-Cox将从对数正态分布绘制的样本映射到正态分布的示例：</p>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>pt = preprocessing.PowerTransformer(method=’box-cox’, standardize=False)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_lognormal = np.random.RandomState(616).lognormal(size=(3, 3))</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_lognormal                                         </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[1.28…, 1.18…, 0.84…],</li>
+<li>[0.94…, 1.60…, 0.38…],</li>
+<li>[1.35…, 0.21…, 1.09…]])</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>pt.fit_transform(X_lognormal)                   </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[ 0.49…,  0.17…, -0.15…],</li>
+<li>[-0.05…,  0.58…, -0.57…],</li>
+<li>[ 0.69…, -0.84…,  0.10…]])</li>
+</ul>
+<p>虽然上面的示例将standardize选项设置为False，但 PowerTransformer默认情况下将零均值单位方差归一化应用于变换后的输出。</p>
+<p>以下是应用于各种概率分布的Box-Cox和Yeo-Johnson的示例。请注意，当应用于某些分布时，功率变换实现非常类似高斯的结果，但是对于其他分布，它们是无效的。这突出了在转换之前和之后可视化数据的重要性。</p>
+<ul>
+<li><p><img src="/images/bkhomework19024/3.png" alt="3.png"><br>也可以使用QuantileTransformer设置将数据映射到正态分布 output_distribution=’normal’。将前面的示例与iris数据集一起使用：</p>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>quantile_transformer = preprocessing.QuantileTransformer(</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>…     output_distribution=’normal’, random_state=0)</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_trans = quantile_transformer.fit_transform(X)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>quantile_transformer.quantiles_ </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[4.3…,   2…,     1…,     0.1…],</li>
+<li>[4.31…,  2.02…,  1.01…,  0.1…],</li>
+<li>[4.32…,  2.05…,  1.02…,  0.1…],</li>
+<li>…,</li>
+<li>[7.84…,  4.34…,  6.84…,  2.5…],</li>
+<li>[7.87…,  4.37…,  6.87…,  2.5…],</li>
+<li>[7.9…,   4.4…,   6.9…,   2.5…]])</li>
+</ul>
+<p>因此，输入的中值变为输出的平均值，以0为中心。正常输出被削减，使得输入的最小值和最大值 - 分别对应于1e-7和1 - 1e-7分位数 - 不会变为无穷大转型。</p>
+<h1 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h1><p>归一化是将单个样本缩放为具有单位范数的过程。如果您计划使用二次形式（如点积或任何其他内核）来量化任何样本对的相似性，则此过程非常有用。</p>
+<p>此假设是常用于文本分类和聚类上下文的向量空间模型的基础。</p>
+<p>该函数normalize提供了一种快速简便的方法，可以使用l1或l2 规范在单个类数据集上执行此操作</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X = [[ 1., -1.,  2.],</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>…      [ 2.,  0.,  0.],</li>
+<li>…      [ 0.,  1., -1.]]</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_normalized = preprocessing.normalize(X, norm=’l2’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li></li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X_normalized                                      </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[ 0.40…, -0.40…,  0.81…],</li>
+<li>[ 1.  …,  0.  …,  0.  …],</li>
+<li>[ 0.  …,  0.70…, -0.70…]])</li>
+</ul>
+<p>该preprocessing模块还提供了一个实用程序类 Normalizer，它使用TransformerAPI 实现相同的操作 （即使该fit方法在这种情况下无用：该类是无状态的，因为此操作独立地处理样本）。</p>
+<p>因此，该类适用于以下的早期步骤 sklearn.pipeline.Pipeline：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>normalizer = preprocessing.Normalizer().fit(X)  # fit does nothing</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>normalizer</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>Normalizer(copy=True, norm=’l2’)</li>
+</ul>
+<p>然后，规范化器实例可以作为任何变换器用于样本向量：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>normalizer.transform(X)                            </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[ 0.40…, -0.40…,  0.81…],</li>
+<li>[ 1.  …,  0.  …,  0.  …],</li>
+<li>[ 0.  …,  0.70…, -0.70…]])</li>
+<li></li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>normalizer.transform([[-1.,  1., 0.]])             </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[-0.70…,  0.70…,  0.  …]])</li>
+</ul>
+<p>稀疏输入</p>
+<p>normalize并Normalizer接受来自scipy.sparse的密集数组和稀疏矩阵作为输入。</p>
+<p>对于稀疏输入，数据在被送入有效的Cython例程之前被转换为Compressed Sparse Rows表示（请参阅scipy.sparse.csr_matrix参考资料）。为避免不必要的内存复制，建议在上游选择CSR表示。</p>
+<h1 id="编码分类功能"><a href="#编码分类功能" class="headerlink" title="编码分类功能"></a>编码分类功能</h1><p>通常，特征不是连续值而是分类。例如，一个人可能具备的功能， ， 。这样的功能可以有效地编码为整数，例如 可以表示为 ，而将 。[“male”, “female”][“from Europe”, “from US”, “from Asia”][“uses Firefox”, “uses Chrome”, “uses Safari”, “uses Internet Explorer”][“male”, “from US”, “uses Internet Explorer”][0, 1, 3][“female”, “from Asia”, “uses Chrome”][1, 2, 1]</p>
+<p>要将分类特征转换为此类整数代码，我们可以使用 OrdinalEncoder。此估计器将每个分类特征转换为整数的一个新特征（0到n_categories - 1）：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc = preprocessing.OrdinalEncoder()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X = [[‘male’, ‘from US’, ‘uses Safari’], [‘female’, ‘from Europe’, ‘uses Firefox’]]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.fit(X)  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>OrdinalEncoder(categories=’auto’, dtype=&lt;… ‘numpy.float64’&gt;)</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.transform([[‘female’, ‘from US’, ‘uses Safari’]])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[0., 1., 1.]])</li>
+</ul>
+<p>然而，这样的整数表示不能直接用于所有scikit-learn估计器，因为它们期望连续输入，并且将类别解释为有序的，这通常是不期望的（即，浏览器集是任意排序的）。</p>
+<p>将分类特征转换为可与scikit-learn估计器一起使用的特征的另一种可能性是使用一个K，也称为一热或虚拟编码。这种类型的编码可以通过以下方式获得：OneHotEncoder将每个分类特征与 n_categories可能的值转换为n_categories二进制特征，其中一个为1，其他为0。</p>
+<p>继续上面的例子：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc = preprocessing.OneHotEncoder()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X = [[‘male’, ‘from US’, ‘uses Safari’], [‘female’, ‘from Europe’, ‘uses Firefox’]]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.fit(X)  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>OneHotEncoder(categorical_features=None, categories=None,</li>
+<li>dtype=&lt;… ‘numpy.float64’&gt;, handle_unknown=’error’,</li>
+<li>n_values=None, sparse=True)</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.transform([[‘female’, ‘from US’, ‘uses Safari’],</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>…                [‘male’, ‘from Europe’, ‘uses Safari’]]).toarray()</li>
+<li>array([[1., 0., 0., 1., 0., 1.],</li>
+<li>[0., 1., 1., 0., 0., 1.]])</li>
+</ul>
+<p>默认情况下，每个要素可以采用的值是从数据集中自动推断出来的，可以在categories_属性中找到：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.categories_</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>[array([‘female’, ‘male’], dtype=object), array([‘from Europe’, ‘from US’], dtype=object), array([‘uses Firefox’, ‘uses Safari’], dtype=object)]</li>
+</ul>
+<p>可以使用参数显式指定它categories。我们的数据集中有两种性别，四种可能的大陆和四种Web浏览器：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>genders = [‘female’, ‘male’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>locations = [‘from Africa’, ‘from Asia’, ‘from Europe’, ‘from US’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>browsers = [‘uses Chrome’, ‘uses Firefox’, ‘uses IE’, ‘uses Safari’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc = preprocessing.OneHotEncoder(categories=[genders, locations, browsers])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>Note that for there are missing categorical values for the 2nd and 3rd</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>feature</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X = [[‘male’, ‘from US’, ‘uses Safari’], [‘female’, ‘from Europe’, ‘uses Firefox’]]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.fit(X) </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>OneHotEncoder(categorical_features=None,</li>
+<li>categories=[…],</li>
+<li>dtype=&lt;… ‘numpy.float64’&gt;, handle_unknown=’error’,</li>
+<li>n_values=None, sparse=True)</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.transform([[‘female’, ‘from Asia’, ‘uses Chrome’]]).toarray()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[1., 0., 0., 1., 0., 0., 1., 0., 0., 0.]])</li>
+</ul>
+<p>如果训练数据可能缺少分类特征，则通常可以更好地指定handle_unknown=’ignore’而不是categories如上所述手动设置。如果 handle_unknown=’ignore’在转换期间遇到指定和未知类别，则不会引发错误，但此功能的结果单热编码列将全为零（handle_unknown=’ignore’仅支持单热编码）：</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc = preprocessing.OneHotEncoder(handle_unknown=’ignore’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>X = [[‘male’, ‘from US’, ‘uses Safari’], [‘female’, ‘from Europe’, ‘uses Firefox’]]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.fit(X) </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>OneHotEncoder(categorical_features=None, categories=None,</li>
+<li>dtype=&lt;… ‘numpy.float64’&gt;, handle_unknown=’ignore’,</li>
+<li>n_values=None, sparse=True)</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>enc.transform([[‘female’, ‘from Asia’, ‘uses Chrome’]]).toarray()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>array([[1., 0., 0., 0., 0., 0.]])</li>
+</ul>
+<p>请参阅从dicts加载功能，了解表示为dict的分类功能，而不是标量。</p>
+<h1 id="离散"><a href="#离散" class="headerlink" title="离散"></a>离散</h1><p>离散化 （也称为量化或分级）提供了将连续特征划分为离散值的方法。具有连续特征的某些数据集可以从离散化中受益，因为离散化可以将连续属性的数据集转换为仅具有标称属性的数据集。</p>
+<p>单热编码离散化功能可以使模型更具表现力，同时保持可解释性。例如，使用离散器进行预处理可以为线性模型引入非线性。</p>
+<h2 id="K-bin离散化"><a href="#K-bin离散化" class="headerlink" title="K-bin离散化"></a>K-bin离散化</h2><h2 id="特征二值化"><a href="#特征二值化" class="headerlink" title="特征二值化"></a>特征二值化</h2><h1 id="遗漏值的估算"><a href="#遗漏值的估算" class="headerlink" title="遗漏值的估算"></a>遗漏值的估算</h1><h1 id="生成多项式特征"><a href="#生成多项式特征" class="headerlink" title="生成多项式特征"></a>生成多项式特征</h1><h1 id="自定义变换器"><a href="#自定义变换器" class="headerlink" title="自定义变换器"></a>自定义变换器</h1><p>【注】引用于 scikit-learn<a href="https://scikit-learn.org/stable/modules/preprocessing.html" target="_blank" rel="noopener">链接</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/新手入门任务/" rel="tag"># 新手入门任务</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/学习/机器学习/bkhomework190221.html" rel="next" title="机器学习算法解决思路与建议">
+                <i class="fa fa-chevron-left"></i> 机器学习算法解决思路与建议
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/学习/机器学习/bkhomework190223.html" rel="prev" title="机器学习流程与问题解决架构模板">
+                机器学习流程与问题解决架构模板 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">七月</p>
+              <p class="site-description motion-element" itemprop="description">Stay  Hungry,  Stay  Foolish</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#删除方差低的要素"><span class="nav-number">1.</span> <span class="nav-text">删除方差低的要素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#将功能扩展到范围"><span class="nav-number">1.1.</span> <span class="nav-text">将功能扩展到范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缩放稀疏数据"><span class="nav-number">1.2.</span> <span class="nav-text">缩放稀疏数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用异常值缩放数据"><span class="nav-number">1.3.</span> <span class="nav-text">使用异常值缩放数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#居中核矩阵"><span class="nav-number">1.4.</span> <span class="nav-text">居中核矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非线性变换"><span class="nav-number">2.</span> <span class="nav-text">非线性变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#映射到统一分布"><span class="nav-number">2.1.</span> <span class="nav-text">映射到统一分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#映射到高斯分布"><span class="nav-number">2.2.</span> <span class="nav-text">映射到高斯分布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#规范化"><span class="nav-number">3.</span> <span class="nav-text">规范化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编码分类功能"><span class="nav-number">4.</span> <span class="nav-text">编码分类功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散"><span class="nav-number">5.</span> <span class="nav-text">离散</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-bin离散化"><span class="nav-number">5.1.</span> <span class="nav-text">K-bin离散化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征二值化"><span class="nav-number">5.2.</span> <span class="nav-text">特征二值化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遗漏值的估算"><span class="nav-number">6.</span> <span class="nav-text">遗漏值的估算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成多项式特征"><span class="nav-number">7.</span> <span class="nav-text">生成多项式特征</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义变换器"><span class="nav-number">8.</span> <span class="nav-text">自定义变换器</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七月</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

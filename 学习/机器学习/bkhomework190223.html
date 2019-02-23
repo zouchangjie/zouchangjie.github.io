@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,新手入门任务," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小邹邹" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="个中等水平的数据科学家每天都要处理大量的数据。一些人说超过60%到70%的时间都用于数据清理、数据处理及格式转化，以便于在之后应用机器学习模型。这篇文章的重点便在后者—— 应用机器学习模型（包括预处理的阶段）。此文讨论到的内容来源于我参加的过的数百次的机器学习竞赛。请大家注意这里讨论的方法是大体上适用的，当然还有很多被专业人士使用的非常复杂的方法。 接下来会使用到python。">
+<meta name="keywords" content="机器学习,新手入门任务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习流程与问题解决架构模板">
+<meta property="og:url" content="https://zouchangjie.github.io/学习/机器学习/bkhomework190223.html">
+<meta property="og:site_name" content="小邹邹">
+<meta property="og:description" content="个中等水平的数据科学家每天都要处理大量的数据。一些人说超过60%到70%的时间都用于数据清理、数据处理及格式转化，以便于在之后应用机器学习模型。这篇文章的重点便在后者—— 应用机器学习模型（包括预处理的阶段）。此文讨论到的内容来源于我参加的过的数百次的机器学习竞赛。请大家注意这里讨论的方法是大体上适用的，当然还有很多被专业人士使用的非常复杂的方法。 接下来会使用到python。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework190223/abhishek_2.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework190223/1.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework190223/2.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework190223/3.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework190223/4.png">
+<meta property="og:image" content="https://zouchangjie.github.io/images/bkhomework190223/5.png">
+<meta property="og:updated_time" content="2019-02-23T03:49:40.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习流程与问题解决架构模板">
+<meta name="twitter:description" content="个中等水平的数据科学家每天都要处理大量的数据。一些人说超过60%到70%的时间都用于数据清理、数据处理及格式转化，以便于在之后应用机器学习模型。这篇文章的重点便在后者—— 应用机器学习模型（包括预处理的阶段）。此文讨论到的内容来源于我参加的过的数百次的机器学习竞赛。请大家注意这里讨论的方法是大体上适用的，当然还有很多被专业人士使用的非常复杂的方法。 接下来会使用到python。">
+<meta name="twitter:image" content="https://zouchangjie.github.io/images/bkhomework190223/abhishek_2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zouchangjie.github.io/学习/机器学习/bkhomework190223.html"/>
+
+
+
+
+
+  <title>机器学习流程与问题解决架构模板 | 小邹邹</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小邹邹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">软贱攻城师，无敌程序猿</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zouchangjie.github.io/学习/机器学习/bkhomework190223.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小邹邹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习流程与问题解决架构模板</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-23T21:39:15+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  个中等水平的数据科学家每天都要处理大量的数据。一些人说超过60%到70%的时间都用于数据清理、数据处理及格式转化，以便于在之后应用机器学习模型。这篇文章的重点便在后者——
+应用机器学习模型（包括预处理的阶段）。此文讨论到的内容来源于我参加的过的数百次的机器学习竞赛。请大家注意这里讨论的方法是大体上适用的，当然还有很多被专业人士使用的非常复杂的方法。
+接下来会使用到python。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>个中等水平的数据科学家每天都要处理大量的数据。一些人说超过60%到70%的时间都用于数据清理、数据处理及格式转化，以便于在之后应用机器学习模型。这篇文章的重点便在后者—— 应用机器学习模型（包括预处理的阶段）。此文讨论到的内容来源于我参加的过的数百次的机器学习竞赛。请大家注意这里讨论的方法是大体上适用的，当然还有很多被专业人士使用的非常复杂的方法。<br>接下来会使用到python。</p>
+</blockquote>
+<a id="more"></a> 
+<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>在应用机器学习模型之前，所有的数据都必须转换为表格形式。如下图所示，这个过程是最耗时、最困难的部分。<br>转换完成之后，便可以将这些表格数据灌入机器学习模型。表格数据是在机器学习或是数据挖掘中最常见的数据表示形式。我们有一个数据表，x轴是样本数据，y轴是标签。标签可以是单列可以是多列，取决于问题的形式。我们会用X表示数据，y表示标签。</p>
+<h1 id="标签的种类"><a href="#标签的种类" class="headerlink" title="标签的种类"></a>标签的种类</h1><p>标签会定义你要解决何种问题，有不同的问题类型。例如：</p>
+<ul>
+<li>单列，二进制值（分类问题，一个样本仅属于一个类，并且只有两个类）</li>
+<li>单列，实数值（回归问题，只预测一个值）</li>
+<li>多列，二进制值（分类问题，一个样本属于一个类，但有两个以上的类）</li>
+<li>多列，实数值（回归问题，多个值的预测）</li>
+<li>多个标签（分类问题，一个样本可以属于几个类）<h1 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h1></li>
+</ul>
+<p>对于任何类型的机器学习问题，我们都一定要知道如何评估结果，或者说评估指标和目的是什么。举例来说，对于不均衡的二进制分类问题，我们通常选择受试者工作特征曲线下面积（ROC AUC或简单的AUC）；对于多标签或多类别的分类问题，我们通常选择分类交叉熵或多类对数损失；对于回归问题，则会选择均方差。</p>
+<p>我不会再深入的讲解不同的评估指标，因为根据问题的不同会有很多不同的种类。</p>
+<h1 id="库"><a href="#库" class="headerlink" title="库"></a>库</h1><p>开始尝试机器学习库可以从安装最基础也是最重要的开始，像numpy和scipy。</p>
+<ul>
+<li>查看和执行数据操作：pandas（<a href="http://pandas.pydata.org/）" target="_blank" rel="noopener">http://pandas.pydata.org/）</a></li>
+<li>对于各种机器学习模型：scikit-learn（<a href="http://scikit-learn.org/stable/）" target="_blank" rel="noopener">http://scikit-learn.org/stable/）</a></li>
+<li>最好的gradient boosting库：xgboost（<a href="https://github.com/dmlc/xgboost）" target="_blank" rel="noopener">https://github.com/dmlc/xgboost）</a></li>
+<li>对于神经网络：keras（<a href="http://keras.io/）" target="_blank" rel="noopener">http://keras.io/）</a></li>
+<li>数据绘图：matplotlib（<a href="http://matplotlib.org/）" target="_blank" rel="noopener">http://matplotlib.org/）</a></li>
+<li>监视进度：tqdm（<a href="https://pypi.python.org/pypi/tqdm）" target="_blank" rel="noopener">https://pypi.python.org/pypi/tqdm）</a><br>Anaconda操作简单而且帮你准备好了这些，可是我没有使用，因为我习惯自己配置和自由使用。当然，决策在你手中。</li>
+</ul>
+<h1 id="机器学习总体框架"><a href="#机器学习总体框架" class="headerlink" title="机器学习总体框架"></a>机器学习总体框架</h1><p>2017起，我开始制作一个自动机器学习框架，还在完善过程中，很快就会发布。下图所示的框架图就是这篇文章中将会提到的基础框架：</p>
+<ul>
+<li><img src="/images/bkhomework190223/abhishek_2.png" alt="abhishek_2.png"></li>
+</ul>
+<p>上面的框架图中，粉色的线代表最常用的路径。结束提取数据并将其转化为表格形式，我们就可以开始建造机器学习模型了。</p>
+<p>应用算法解决 Kaggle 问题，一般有以下几个步骤：</p>
+<ul>
+<li>第一步：识别问题</li>
+<li>第二步：分离数据</li>
+<li>第三步：构造提取特征</li>
+<li>第四步：组合数据</li>
+<li>第五步：分解</li>
+<li>第六步：选择特征</li>
+<li>第七步：选择算法进行训练<br>当然，工欲善其事，必先利其器，要先把工具和包都安好。 </li>
+</ul>
+<p>最方便的就是安装 Anaconda，这里面包含大部分数据科学所需要的包，直接引入就可以了，常用的包有： </p>
+<ul>
+<li>pandas：常用来将数据转化成 dataframe 形式进行操作 </li>
+<li>scikit-learn：里面有要用到的机器学习算法模型 </li>
+<li>matplotlib：用来画图 </li>
+<li>以及 xgboost，keras，tqdm 等。</li>
+</ul>
+<h2 id="第一步：识别问题"><a href="#第一步：识别问题" class="headerlink" title="第一步：识别问题"></a>第一步：识别问题</h2><p>在这一步先明确这个问题是分类还是回归。通过问题和数据就可以判断出来，数据由 X 和 label 列构成，label 可以一列也可以多列，可以是二进制也可以是实数，当它为二进制时，问题属于分类，当它为实数时，问题属于回归。</p>
+<p>第二步：分离数据</p>
+<ul>
+<li><img src="/images/bkhomework190223/1.png" alt="1.png"><h2 id="为什么需要将数据分成两部分？"><a href="#为什么需要将数据分成两部分？" class="headerlink" title="为什么需要将数据分成两部分？"></a>为什么需要将数据分成两部分？</h2></li>
+</ul>
+<p>用 Training Data 来训练模型，用 Validation Data 来检验这个模型的表现，不然的话，通过各种调节参数，模型可以在训练数据集上面表现的非常出色，但是这可能会是过拟合，过拟合就是太依赖现有的数据了，拟合的效果特别好，但是只适用于训练集，以致于来一个新的数据，就不知道该预测成什么了。所以需要有 Validation 来验证一下，看这个模型是在那里自娱自乐呢，还是真的表现出色。</p>
+<p>在 scikit learn 包里就有工具可以帮你做到这些：<br>分类问题用 StrtifiedKFold</p>
+<p>from sklearn.cross_validation import StratifiedKFold</p>
+<p>回归问题用 KFold</p>
+<p>from sklearn.cross_validation import KFold</p>
+<h2 id="第三步：构造特征"><a href="#第三步：构造特征" class="headerlink" title="第三步：构造特征"></a>第三步：构造特征</h2><p>这个时候，需要将数据转化成模型需要的形式。数据有三种类型：数字，类别，文字。当数据是类别的形式时，需要将它的每一类提取出来作为单独一列，然后用二进制表示每条记录相应的值。例如：</p>
+<p>record 1: 性别 女<br>record 2：性别 女<br>record 3：性别 男</p>
+<p>转化之后就是：</p>
+<p>         女 男<br>record 1: 1 0<br>record 2：1 0<br>record 3：0 1</p>
+<p>这个过程 sklearn 也可以帮你做到：</p>
+<p>from sklearn.preprocessing import LabelEncoder</p>
+<p>或者</p>
+<p>from sklearn.preprocessing import OneHotEncoder</p>
+<h2 id="第四步：组合数据"><a href="#第四步：组合数据" class="headerlink" title="第四步：组合数据"></a>第四步：组合数据</h2><p>处理完 Feature 之后，就将它们组合到一起。<br>如果数据是稠密的，就可以用 numpy 的 hstack:</p>
+<p>import numpy as np<br>X = np.hstack((x1, x2, …))</p>
+<p>如果是稀疏的，就用 sparse 的 hstack：</p>
+<p>from scipy import sparse<br>X = sparse.hstack((x1, x2, …))</p>
+<p>组合之后，就可以应用以下算法模型： </p>
+<ul>
+<li>RandomForestClassifier </li>
+<li>RandomForestRegressor </li>
+<li>ExtraTreesClassifier </li>
+<li>ExtraTreesRegressor </li>
+<li>XGBClassifier </li>
+<li>XGBRegressor</li>
+</ul>
+<p>但是不能应用线性模型，线性模型之前需要对数据进行正则化而不是上述预处理。</p>
+<h2 id="第五步：分解"><a href="#第五步：分解" class="headerlink" title="第五步：分解"></a>第五步：分解</h2><p>这一步是为了进一步优化模型，可以用以下方法：</p>
+<ul>
+<li><img src="/images/bkhomework190223/2.png" alt="2.png"></li>
+</ul>
+<p>PCA：Principal components analysis，主成分分析，是一种分析、简化数据集的技术。用于减少数据集的维数，同时保持数据集中的对方差贡献最大的特征。</p>
+<p>from sklearn.decomposition import PCA</p>
+<p>对于文字数据，在转化成稀疏矩阵之后，可以用 SVD</p>
+<p>from sklearn.decomposition import TruncatedSVD</p>
+<p>SVD：Singular Value Decomposition，奇异值分解，是线性代数中一种重要的矩阵分解，它总能找到标准化正交基后方差最大的维度，因此用它进行降维去噪</p>
+<h2 id="第六步：选择特征"><a href="#第六步：选择特征" class="headerlink" title="第六步：选择特征"></a>第六步：选择特征</h2><p>当特征个数越多时，分析特征、训练模型所需的时间就越长，容易引起“维度灾难”，模型也会越复杂，推广能力也会下降，所以需要剔除不相关或亢余的特征。</p>
+<p>常用的算法有完全搜索，启发式搜索，和随机算法。</p>
+<p>例如，Random Forest：</p>
+<p>from sklearn.ensemble import RandomForestClassifier</p>
+<p>或者 xgboost：</p>
+<p>import xgboost as xgb</p>
+<p>对于稀疏的数据，一个比较有名的方法是 chi-2：</p>
+<p>from sklearn.feature_selection import SelectKBest<br>from sklearn.feature_selection import chi2</p>
+<h2 id="第七步：选择算法进行训练"><a href="#第七步：选择算法进行训练" class="headerlink" title="第七步：选择算法进行训练"></a>第七步：选择算法进行训练</h2><p>选择完最相关的参数之后，接下来就可以应用算法，常用的算法有</p>
+<ul>
+<li>Classification: </li>
+<li>Random Forest </li>
+<li>GBM </li>
+<li>Logistic Regression </li>
+<li>Naive Bayes </li>
+<li>Support Vector Machines </li>
+<li><p>k-Nearest Neighbors</p>
+</li>
+<li><p>Regression </p>
+</li>
+<li>Random Forest </li>
+<li>GBM </li>
+<li>Linear Regression </li>
+<li>Ridge </li>
+<li>Lasso </li>
+<li>SVR</li>
+</ul>
+<p>在scikit－learn里可以看到分类和回归的可用的算法一览，包括它们的原理和例子代码。</p>
+<p>在应用各算法之前先要明确这个方法到底是否合适。<br>为什么那么多算法里，只提出这几个算法呢，这就需要对比不同算法的性能了。<br>这篇神文 Do we Need Hundreds of Classifiers to Solve Real World Classification Problems 测试了179种分类模型在UCI所有的121个数据上的性能，发现Random Forests 和 SVM 性能最好。<br>我们可以学习一下里面的调研思路，看看是怎么样得到比较结果的，在我们的实践中也有一定的指导作用。</p>
+<ul>
+<li><img src="/images/bkhomework190223/3.png" alt="3.png"></li>
+</ul>
+<p>但是直接应用算法后，一般精度都不是很理想，这个时候需要调节参数，最干货的问题来了，什么模型需要调节什么参数呢？</p>
+<ul>
+<li><img src="/images/bkhomework190223/4.png" alt="4.png"></li>
+</ul>
+<p>虽然在sklearn的文档里，会列出所有算法所带有的参数，但是里面并不会说调节哪个会有效。在一些mooc课程里，有一些项目的代码，里面可以看到一些算法应用时，他们重点调节的参数，但是有的也不会说清楚为什么不调节别的。这里作者根据他100多次比赛的经验，列出了这个表，我觉得可以借鉴一下，当然，如果有时间的话，去对照文档里的参数列表，再查一下算法的原理，通过理论也是可以判断出来哪个参数影响比较大的。</p>
+<p>调参之后，也并不就是大功告成，这个时候还是需要去思考，是什么原因造成精度低的，是哪些数据的深意还没有被挖掘到，这个时候需要用统计和可视化去再一次探索数据，之后就再走一遍上面的过程。</p>
+<p>我觉得这里还提到了很有用的一条经验是，把所有的 transformer 都保存起来，方便在 validation 数据集上面应用：</p>
+<ul>
+<li><img src="/images/bkhomework190223/5.png" alt="5.png"></li>
+</ul>
+<p>文章里介绍了分析问题的思路，还提到了几条很实用的经验，不过经验终究是别人的经验，只能借鉴，要想提高自己的水平，还是要看到作者背后的事情，就是参加了100多次实战，接下来就去行动吧，享受用算法和代码与数据玩耍的兴奋吧。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/新手入门任务/" rel="tag"># 新手入门任务</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/学习/机器学习/bkhomework190224.html" rel="next" title="机器学习特征选择">
+                <i class="fa fa-chevron-left"></i> 机器学习特征选择
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">七月</p>
+              <p class="site-description motion-element" itemprop="description">Stay  Hungry,  Stay  Foolish</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据"><span class="nav-number">1.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签的种类"><span class="nav-number">2.</span> <span class="nav-text">标签的种类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评估指标"><span class="nav-number">3.</span> <span class="nav-text">评估指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#库"><span class="nav-number">4.</span> <span class="nav-text">库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习总体框架"><span class="nav-number">5.</span> <span class="nav-text">机器学习总体框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：识别问题"><span class="nav-number">5.1.</span> <span class="nav-text">第一步：识别问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要将数据分成两部分？"><span class="nav-number">5.2.</span> <span class="nav-text">为什么需要将数据分成两部分？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：构造特征"><span class="nav-number">5.3.</span> <span class="nav-text">第三步：构造特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：组合数据"><span class="nav-number">5.4.</span> <span class="nav-text">第四步：组合数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步：分解"><span class="nav-number">5.5.</span> <span class="nav-text">第五步：分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六步：选择特征"><span class="nav-number">5.6.</span> <span class="nav-text">第六步：选择特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七步：选择算法进行训练"><span class="nav-number">5.7.</span> <span class="nav-text">第七步：选择算法进行训练</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七月</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
